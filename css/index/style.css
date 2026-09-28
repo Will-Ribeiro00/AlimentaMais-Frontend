@@ -1,7 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #1c1c1c;
-  background-color: #FFFBF3;
+  background-color: #fffbf3;
 }
 
 h1,
@@ -24,14 +24,14 @@ img {
 .botao {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 15px;
   border: none;
   border-radius: 10px;
-  padding: 0.85rem 1.6rem;
+  padding: 14px 26px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   transition:
     background-color 0.2s ease,
     opacity 0.2s ease;
@@ -49,7 +49,7 @@ img {
 .botao--contorno {
   background-color: transparent;
   color: #f2603a;
-  border: 1.5px solid #f2603a;
+  border: 2px solid #f2603a;
 }
 
 .botao--contorno:hover {
@@ -91,7 +91,7 @@ img {
 }
 
 .titulo-secao {
-  font-size: 2rem;
+  font-size: 32px;
   color: #1f4a34;
   text-align: center;
 }
@@ -104,8 +104,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  padding: 1.25rem 4rem;
+  gap: 32px;
+  padding: 20px 64px;
 }
 
 .nav__logo img {
@@ -115,34 +115,33 @@ img {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 36px;
 }
 
 .nav__link {
   color: #2f6b4f;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 15px;
   text-decoration: none;
-  padding-bottom: 0.35rem;
+  padding-bottom: 6px;
 }
 
 .nav__link:hover {
   border-bottom: 2px solid #f2603a;
   color: #f2603a;
-
 }
 
 .nav__acoes {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .hero {
   display: flex;
   align-items: stretch;
-  gap: 3rem;
-  padding: 2rem 0 4rem 4rem;
+  gap: 48px;
+  padding: 32px 0 64px 64px;
 }
 
 .hero__conteudo {
@@ -150,12 +149,12 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 24px;
   min-width: 320px;
 }
 
 .hero__titulo {
-  font-size: 3rem;
+  font-size: 48px;
   display: flex;
   flex-direction: column;
 }
@@ -169,36 +168,41 @@ img {
 }
 
 .hero__texto {
-  font-size: 1.15rem;
+  font-size: 18px;
   color: #1c1c1c;
-  max-width: 32ch;
+  max-width: 480px;
 }
 
 .hero__acoes {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .hero__imagem {
+  position: relative;
   flex: 1;
   min-width: 320px;
   background-size: cover;
   background-position: center;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 40%,
-    black 100%
-  );
-  mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
   opacity: 0.92;
+  overflow: hidden;
+}
+
+.hero__imagem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #fffbf3 0%, transparent 40%);
 }
 
 .porque {
   display: flex;
-  gap: 4rem;
-  padding: 5rem 4rem;
+  gap: 64px;
+  padding: 80px 64px;
 }
 
 .porque__texto {
@@ -206,44 +210,46 @@ img {
   min-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 20px;
 }
 
 .porque__texto .botao {
   align-self: center;
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 
 .porque__cards {
   flex: 1;
   min-width: 320px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  align-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .card-beneficio {
-  border: 1.5px solid #18341E;
+  width: calc(50% - 8px);
+  border: 2px solid #18341e;
   border-radius: 14px;
-  padding: 1rem 1.25rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 1rem;
-  row-gap: 0.5rem;
-  align-items: center;
+  padding: 16px 20px;
 }
 
 .card-beneficio__titulo {
-  grid-column: 1 / -1;
   text-align: center;
   color: #1f4a34;
-  font-size: 1.1rem;
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.card-beneficio__linha {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .card-beneficio__icone {
   width: 50px;
   height: 50px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -255,6 +261,7 @@ img {
 }
 
 .card-beneficio p {
+  margin: 0;
   text-align: left;
   font-size: 12px;
   line-height: 1.45;
@@ -262,98 +269,95 @@ img {
 
 .impacto {
   background-color: #ddeedd;
-  padding: 4rem;
+  padding: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 40px;
 }
 
 .impacto__cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 24px;
   width: 100%;
 }
 
 .card-metrica {
   background-color: #fff;
   border-radius: 14px;
-  padding: 1.5rem 2rem;
+  padding: 24px 32px;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 20px;
   flex: 1;
   min-width: 280px;
   max-width: 380px;
 }
 
 .card-metrica__rotulo {
-  font-size: 0.85rem;
+  font-size: 14px;
   color: #57605b;
 }
 
 .card-metrica__valor {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   color: #1f4a34;
 }
 
 .card-metrica__unidade {
-  font-size: 0.85rem;
+  font-size: 14px;
   color: #57605b;
 }
 
 .como-funciona {
-  padding: 5rem 4rem;
+  padding: 80px 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 48px;
 }
 
-.como-funciona h2{
-  color: #172B4D;
+.como-funciona h2 {
+  color: #172b4d;
 }
 
 .como-funciona__passos {
   display: flex;
-  gap: 3rem;
+  gap: 48px;
   width: 100%;
 }
 
 .passo {
   flex: 1;
   min-width: 220px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 0.75rem;
-  row-gap: 0.5rem;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .passo__numero {
-  grid-column: 1;
-  grid-row: 1;
-  font-size: 2.5rem;
+  font-size: 40px;
   line-height: 1;
   font-weight: 700;
-  color: #172B4D;
+  color: #172b4d;
+}
+
+.passo__conteudo {
+  flex: 1;
 }
 
 .passo__titulo {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-  color: #172B4D;
-  font-size: 1.05rem;
+  margin: 0 0 8px;
+  color: #172b4d;
+  font-size: 17px;
 }
 
 .passo p {
-  grid-column: 2;
-  grid-row: 2;
-  font-size: 0.9rem;
+  margin: 0;
+  font-size: 14px;
 }
 
 /* ---------- CTA ---------- */
@@ -361,18 +365,18 @@ img {
 .cta {
   background-color: #16233f;
   border-radius: 20px;
-  margin: 0 4rem 4rem;
-  padding: 3.5rem 2rem;
+  margin: 0 64px 64px;
+  padding: 56px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
   text-align: center;
 }
 
 .cta__titulo {
   color: #fff;
-  font-size: 1.75rem;
+  font-size: 28px;
 }
 
 .cta__texto {
@@ -380,7 +384,7 @@ img {
 }
 
 .cta .botao {
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 
 /* ---------- Rodapé ---------- */
@@ -388,14 +392,14 @@ img {
 .rodape {
   background-color: #d9d9d9;
   color: black;
-  padding: 3.5rem 4rem 0;
+  padding: 56px 64px 0;
 }
 
 .rodape__topo {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
-  padding-bottom: 2.5rem;
+  gap: 48px;
+  padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -404,13 +408,13 @@ img {
   min-width: 220px;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .rodape__slogan {
   color: black;
-  font-size: 0.85rem;
-  max-width: 26ch;
+  font-size: 14px;
+  max-width: 220px;
 }
 
 .rodape__coluna {
@@ -418,18 +422,18 @@ img {
   min-width: 140px;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .rodape__titulo-coluna {
   color: black;
-  font-size: 0.95rem;
-  margin-bottom: 0.25rem;
+  font-size: 15px;
+  margin-bottom: 4px;
 }
 
 .rodape__link {
   color: black;
-  font-size: 0.9rem;
+  font-size: 14px;
   text-decoration: none;
 }
 
@@ -439,7 +443,7 @@ img {
 
 .rodape__redes {
   display: flex;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .rodape__rede {
@@ -451,13 +455,13 @@ img {
 }
 
 .rodape__base {
-  padding: 1.5rem 0;
+  padding: 24px 0;
   text-align: center;
 }
 
 .rodape__base p {
   color: #8b96aa;
-  font-size: 0.8rem;
+  font-size: 13px;
 }
 
 /* ---------- Responsivo ---------- */
@@ -465,7 +469,7 @@ img {
 @media (max-width: 900px) {
   .nav {
     flex-wrap: wrap;
-    padding: 1.25rem 1.5rem;
+    padding: 20px 24px;
   }
 
   .nav__links {
@@ -478,40 +482,41 @@ img {
   .porque,
   .como-funciona {
     flex-direction: column;
-    padding: 2.5rem 1.5rem;
+    padding: 40px 24px;
   }
 
   .hero {
     flex-direction: column;
-    padding: 2rem 0 0;
+    padding: 32px 0 0;
   }
 
   .hero__conteudo {
-    padding-inline: 1.5rem;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .hero__imagem {
     min-height: 260px;
   }
 
-  .porque__cards {
-    grid-template-columns: 1fr;
+  .card-beneficio {
+    width: 100%;
   }
 
   .como-funciona__passos {
     flex-direction: column;
-    gap: 2rem;
+    gap: 32px;
   }
 
   .cta {
-    margin: 0 1.5rem 2.5rem;
+    margin: 0 24px 40px;
   }
 
   .impacto {
-    padding: 3rem 1.5rem;
+    padding: 48px 24px;
   }
 
   .rodape {
-    padding: 1.5rem;
+    padding: 24px;
   }
 }
