@@ -1,0 +1,151 @@
+/* 1. Variáveis Globais (Cores) */
+:root {
+  --verde-escuro: #18341E;
+  --preto: #000000;
+  --laranja: #F2522F;
+  --verde-claro: #E7EFE0;
+  --creme: #FFFBF3;
+  --branco: #FFFFFF;
+}
+
+/* 2. Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* 3. Sidebar (Esquerda) */
+.sidebar {
+  width: 250px;
+  background-color: var(--verde-claro);
+  padding: 30px 20px;
+}
+
+.navegacao-lateral {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.nome-projeto {
+  color: var(--verde-escuro);
+  margin-top: 10px;
+}
+
+.lista-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.navegacao-lateral a {
+  text-decoration: none;
+  color: var(--verde-escuro);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.navegacao-lateral a.ativo {
+  color: var(--laranja);
+}
+
+.link-sair {
+  margin-top: auto;
+}
+
+/* 4. Conteúdo Principal (Direita) */
+.conteudo-principal {
+  flex: 1;
+  background-color: var(--creme);
+  padding: 40px 60px;
+  color: var(--verde-escuro);
+}
+
+.cabecalho-perfil {
+  margin-bottom: 30px;
+}
+
+.cabecalho-perfil h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.cabecalho-perfil p {
+  font-size: 1rem;
+}
+
+.titulo-principal {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* 5. Tabela / Quadro de Dados */
+.quadro-dados {
+  background-color: var(--branco);
+  border: 1px solid var(--preto);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+
+.item-dado {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid var(--preto);
+  text-decoration: none;
+  color: var(--preto);
+  transition: background-color 0.2s;
+}
+
+a.item-dado:hover {
+  background-color: #f9f9f9;
+}
+
+.item-dado:last-child {
+  border-bottom: none;
+}
+
+.icone-esquerda {
+  width: 24px;
+  height: 24px;
+}
+
+.icone-seta {
+  width: 16px;
+  height: 16px;
+}
+
+.info-texto {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  flex: 1;
+}
+
+.info-texto strong {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.info-texto span {
+  font-size: 0.9rem;
+  color: #333;
+}
