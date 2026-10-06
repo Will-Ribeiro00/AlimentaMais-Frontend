@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Alimenta+ - Perfil
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-content">
+
+            <div class="logo-area">
+
+                <div class="logo">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    <span>+</span>
+
+                </div>
+
+                <h2>
+                    Alimenta+
+                </h2>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a
+                    href="../dashboard/index.html"
+                    class="nav-item"
+                >
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>
+                        Início
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../reservas/index.html"
+                    class="nav-item"
+                >
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <span>
+                        Minhas Reservas
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="index.html"
+                    class="nav-item active"
+                >
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span>
+                        Perfil
+                    </span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <a
+            href="#"
+            class="nav-item logout"
+        >
+
+            <i
+                class="fa-solid fa-arrow-right-from-bracket"
+            ></i>
+
+            <span>
+                Sair
+            </span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main">
+
+
+        <!-- CABEÇALHO -->
+
+        <header class="header">
+
+            <div class="welcome">
+
+                <h1>
+                    Olá, <span id="responsibleGreeting"></span>!
+                </h1>
+
+                <p>
+                    Altere seu cadastro.
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================
+             CONTA
+        ====================================== -->
+
+        <section class="profile-section">
+
+            <h2>
+                Conta
+            </h2>
+
+
+            <div class="profile-card">
+
+
+                <!-- ===================================
+                     NOME - SOMENTE VISUALIZAÇÃO
+                ==================================== -->
+
+                <div class="profile-row static-row">
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-regular fa-circle-user"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Nome do responsável:
+                        </strong>
+
+                        <span id="responsibleName">
+                            --
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ===================================
+                     CPF - SOMENTE VISUALIZAÇÃO
+                ==================================== -->
+
+                <div class="profile-row static-row">
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-regular fa-address-card"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            CPF do responsável:
+                        </strong>
+
+                        <span id="profileCpf">
+                            --
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ===================================
+                     CNPJ - SOMENTE VISUALIZAÇÃO
+                ==================================== -->
+
+                <div class="profile-row static-row">
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-regular fa-id-card"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            CNPJ do estabelecimento:
+                        </strong>
+
+                        <span id="profileCnpj">
+                            --
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ===================================
+                     SENHA - LINK DIRETO
+                ==================================== -->
+
+                <a
+                    class="profile-row editable-row"
+                    href="senha/index.html"
+                >
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-solid fa-lock"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Senha:
+                        </strong>
+
+                        <span>
+                            ••••••••••
+                        </span>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-right row-arrow"
+                    ></i>
+
+                </a>
+
+
+
+                <!-- ===================================
+                     EMAIL
+                ==================================== -->
+
+                <a
+                    class="profile-row editable-row"
+                    href="email/index.html"
+                >
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-regular fa-envelope"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Email:
+                        </strong>
+
+                        <span id="profileEmail">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-right row-arrow"
+                    ></i>
+
+                </a>
+
+
+
+                <!-- ===================================
+                     CELULAR
+                ==================================== -->
+
+                <a
+                    class="profile-row editable-row"
+                    href="celular/index.html"
+                >
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-solid fa-mobile-screen-button"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Celular:
+                        </strong>
+
+                        <span id="profilePhone">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-right row-arrow"
+                    ></i>
+
+                </a>
+
+
+
+                <!-- ===================================
+                     NOME FANTASIA
+                ==================================== -->
+
+                <a
+                    class="profile-row editable-row"
+                    href="nome-fantasia/index.html"
+                >
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-solid fa-store"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Nome fantasia:
+                        </strong>
+
+                        <span id="profileFantasyName">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-right row-arrow"
+                    ></i>
+
+                </a>
+
+
+
+                <!-- ===================================
+                     ENDEREÇO
+                ==================================== -->
+
+                <a
+                    class="profile-row editable-row"
+                    href="endereco/index.html"
+                >
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-solid fa-location-dot"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Endereço:
+                        </strong>
+
+                        <span id="profileAddress">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-right row-arrow"
+                    ></i>
+
+                </a>
+
+
+
+                <!-- ===================================
+                     CATEGORIA
+                ==================================== -->
+
+                <a
+                    class="profile-row editable-row"
+                    href="categoria/index.html"
+                >
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-solid fa-border-all"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Categoria:
+                        </strong>
+
+                        <span id="profileCategory">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-right row-arrow"
+                    ></i>
+
+                </a>
+
+
+
+                <!-- ===================================
+                     EXCLUIR CONTA
+                ==================================== -->
+
+                <a
+                    class="profile-row editable-row delete-account"
+                    href="excluir-conta/index.html"
+                >
+
+                    <div class="row-icon">
+
+                        <i
+                            class="fa-solid fa-trash-can"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <strong>
+                            Excluir conta:
+                        </strong>
+
+                        <span>
+                            Excluir permanentemente
+                        </span>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-right row-arrow"
+                    ></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../data.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

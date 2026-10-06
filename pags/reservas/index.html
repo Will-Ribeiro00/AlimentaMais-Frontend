@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Padaria São João - Reservas
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="/css/reservas/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div>
+
+            <div class="logo-area">
+
+                <div class="logo">
+
+                    <i class="fa-solid fa-bread-slice"></i>
+
+                    <span>+</span>
+
+                </div>
+
+                <h2>
+                    Padaria São João
+                </h2>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a
+                    class="nav-item"
+                    href="../dashboard/index.html"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../ofertas/index.html"
+                >
+                    <i class="fa-solid fa-tag"></i>
+                    <span>Minhas Ofertas</span>
+                </a>
+
+
+                <a
+                    class="nav-item active"
+                    href="index.html"
+                >
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>Reservas</span>
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../perfil/index.html"
+                >
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <a
+            class="nav-item"
+            href="#"
+        >
+
+            <i
+                class="fa-solid fa-arrow-right-from-bracket"
+            ></i>
+
+            <span>
+                Sair
+            </span>
+
+        </a>
+
+    </aside>
+
+
+    <div
+        class="overlay"
+        id="overlay"
+    ></div>
+
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <button
+                    class="mobile-menu"
+                    id="mobileMenu"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="welcome">
+
+                    <h1>
+                        Olá, Padaria São João!
+                    </h1>
+
+
+                    <p>
+                        Aqui você pode visualizar
+                        as reservas atuais e anteriores.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <div class="date">
+
+                    <i
+                        class="fa-regular fa-calendar"
+                    ></i>
+
+                    <span
+                        id="currentDate"
+                    ></span>
+
+                </div>
+
+
+                <button
+                    class="add-reservation-button"
+                    id="openReservationModal"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-plus"
+                    ></i>
+
+                    Adicionar reserva
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- RESERVAS -->
+
+        <section
+            class="reservations-container"
+            id="reservationsContainer"
+        ></section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL NOVA RESERVA
+====================================================== -->
+
+<div
+    class="modal-overlay"
+    id="reservationModal"
+    role="dialog"
+    aria-modal="true"
+>
+
+    <div class="reservation-modal">
+
+
+        <button
+            class="close-modal"
+            id="closeReservationModal"
+            type="button"
+            aria-label="Fechar"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-title">
+
+            <div class="modal-icon">
+
+                <i
+                    class="fa-solid fa-calendar-plus"
+                ></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Adicionar reserva
+                </h2>
+
+                <p>
+                    Registre uma nova reserva
+                    e atualize o estoque.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="reservationForm"
+            novalidate
+        >
+
+
+            <div class="form-group full">
+
+                <label for="customerName">
+                    Nome do cliente
+                </label>
+
+                <input
+                    id="customerName"
+                    autocomplete="name"
+                    placeholder="Ex.: João Lucas"
+                    required
+                >
+
+                <small
+                    class="error"
+                    id="customerError"
+                ></small>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="reservationOffer">
+                    Oferta
+                </label>
+
+
+                <select
+                    id="reservationOffer"
+                    required
+                ></select>
+
+
+                <small
+                    class="help"
+                    id="stockInformation"
+                ></small>
+
+
+                <small
+                    class="error"
+                    id="offerError"
+                ></small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reservationQuantity">
+                    Quantidade
+                </label>
+
+
+                <input
+                    id="reservationQuantity"
+                    type="number"
+                    min="1"
+                    step="1"
+                    value="1"
+                    inputmode="numeric"
+                >
+
+
+                <small
+                    class="error"
+                    id="quantityError"
+                ></small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reservationDate">
+                    Data da reserva
+                </label>
+
+
+                <input
+                    id="reservationDate"
+                    type="date"
+                    required
+                >
+
+
+                <small
+                    class="error"
+                    id="dateError"
+                ></small>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="reservationStatus">
+                    Status inicial
+                </label>
+
+
+                <select
+                    id="reservationStatus"
+                >
+
+                    <option>
+                        Aguardando retirada
+                    </option>
+
+                    <option>
+                        Retirada
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="reservation-preview">
+
+
+                <div>
+
+                    <span>
+                        Oferta
+                    </span>
+
+                    <strong
+                        id="previewOffer"
+                    >
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Quantidade
+                    </span>
+
+                    <strong
+                        id="previewQuantity"
+                    >
+                        1
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong
+                        id="previewPrice"
+                    >
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions full">
+
+
+                <button
+                    class="cancel-button"
+                    id="cancelReservation"
+                    type="button"
+                >
+                    Cancelar
+                </button>
+
+
+                <button
+                    class="save-button"
+                    type="submit"
+                >
+
+                    <i
+                        class="fa-solid fa-check"
+                    ></i>
+
+                    Salvar reserva
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL STATUS
+====================================================== -->
+
+<div
+    class="modal-overlay"
+    id="statusModal"
+    role="dialog"
+    aria-modal="true"
+>
+
+    <div class="simple-modal">
+
+
+        <button
+            class="close-modal"
+            id="closeStatusModal"
+            type="button"
+            aria-label="Fechar"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <h2>
+            Alterar status
+        </h2>
+
+
+        <p
+            id="selectedReservation"
+        ></p>
+
+
+        <label for="newStatus">
+            Novo status
+        </label>
+
+
+        <select
+            id="newStatus"
+        >
+
+            <option>
+                Aguardando retirada
+            </option>
+
+            <option>
+                Retirada
+            </option>
+
+            <option>
+                Cancelada
+            </option>
+
+        </select>
+
+
+        <div class="modal-actions">
+
+
+            <button
+                class="cancel-button"
+                id="cancelStatus"
+                type="button"
+            >
+                Cancelar
+            </button>
+
+
+            <button
+                class="save-button"
+                id="saveStatus"
+                type="button"
+            >
+                Salvar
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="/js/data.js"></script>
+
+<script src="/js/reservas/script.js"></script>
+
+</body>
+
+</html>
