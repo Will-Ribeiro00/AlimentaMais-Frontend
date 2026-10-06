@@ -1,11 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>pagina do consumidor</h1>
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Consumidor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/global/style.css" />
+    <link rel="stylesheet" href="../../css/consumidor/style.css" />
+  </head>
+  <body>
+    <header class="container topbar">
+      <div class="brand">
+        <div class="brand__logo">+</div>
+        <div class="brand__text">Alimenta+</div>
+      </div>
+
+      <nav class="topbar__nav" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#impacto">Impacto</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button type="button" class="botao botao--outline">Perfil</button>
+        <button type="button" class="botao botao--primary">Sair</button>
+      </div>
+    </header>
+
+    <main id="inicio" class="container hero">
+      <section class="hero__content">
+        <span class="eyebrow">❤ Consumidor ativo</span>
+        <h1>
+          Menos desperdício,
+          <span class="hero__title-accent">mais economia.</span>
+        </h1>
+        <p>
+          Descubra ofertas próximas de você, reserve alimentos em boa condição e
+          acompanhe o impacto positivo que suas escolhas geram na comunidade.
+        </p>
+
+        <div class="hero__actions">
+          <button type="button" class="botao botao--primary">Ver ofertas</button>
+          <button type="button" class="botao botao--outline">Minhas reservas</button>
+        </div>
+
+        <div class="hero__stats">
+          <div class="mini-stat">
+            <strong>24</strong>
+            <span>ofertas hoje</span>
+          </div>
+          <div class="mini-stat">
+            <strong>8</strong>
+            <span>reservas ativas</span>
+          </div>
+          <div class="mini-stat">
+            <strong>92kg</strong>
+            <span>salvos este mês</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="hero__visual" aria-label="Resumo do consumidor">
+        <div class="dashboard-card">
+          <div class="offer-highlight">
+            <div>
+              <span class="offer-highlight__tag">Mais procurado</span>
+              <strong>Kit padaria</strong>
+              <small>Padaria São João • 1,2 km</small>
+            </div>
+            <div class="price-box">
+              <span class="old-price">R$ 19,90</span>
+              <span class="new-price">R$ 9,90</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="reservation-list">
+            <div class="reservation-item">
+              <div class="reservation-item__meta">
+                <strong>Retirada hoje</strong>
+                <small>3 itens • 18:30h</small>
+              </div>
+              <span class="pill pill--success">Confirmada</span>
+            </div>
+            <div class="reservation-item">
+              <div class="reservation-item__meta">
+                <strong>Oferta de salgado</strong>
+                <small>2 itens • 19:00h</small>
+              </div>
+              <span class="pill pill--success">Disponível</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="ofertas" class="container main-section">
+      <div class="section-header">
+        <h2>Ofertas em destaque</h2>
+        <a href="#" class="link-more">Ver todas</a>
+      </div>
+
+      <div class="cards-grid">
+        <article class="offer-card">
+          <span class="offer-card__badge">Padaria</span>
+          <h3>Kit café da manhã</h3>
+          <p>Pães, frutas e café artesanal prontos para retirada.</p>
+          <div class="offer-card__meta">
+            <span class="offer-card__price">R$ 12,50</span>
+            <button type="button" class="offer-card__button">Reservar</button>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <span class="offer-card__badge">Salgados</span>
+          <h3>Combo de salgados</h3>
+          <p>Seleção de coxinhas, esfihas e empadas fresquinhas.</p>
+          <div class="offer-card__meta">
+            <span class="offer-card__price">R$ 15,90</span>
+            <button type="button" class="offer-card__button">Reservar</button>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <span class="offer-card__badge">Sobremesas</span>
+          <h3>Box de doces</h3>
+          <p>Doces do dia em pacote especial para aproveitar antes do fim.</p>
+          <div class="offer-card__meta">
+            <span class="offer-card__price">R$ 9,80</span>
+            <button type="button" class="offer-card__button">Reservar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container main-section" id="reservas">
+      <div class="info-grid">
+        <div class="panel">
+          <h3>Minhas reservas</h3>
+
+          <div class="reservation-item--large">
+            <div>
+              <strong>Kit padaria</strong>
+              <div>Dia 12/10 • 18:30h</div>
+            </div>
+            <span class="pill pill--success">Confirmada</span>
+          </div>
+
+          <div class="reservation-item--large">
+            <div>
+              <strong>Combo de sobremesas</strong>
+              <div>Dia 13/10 • 19:00h</div>
+            </div>
+            <span class="pill pill--success">Pendente</span>
+          </div>
+
+          <div class="reservation-item--large">
+            <div>
+              <strong>Mini café da manhã</strong>
+              <div>Dia 14/10 • 08:00h</div>
+            </div>
+            <span class="pill pill--success">Disponível</span>
+          </div>
+        </div>
+
+        <aside id="impacto" class="panel">
+          <h3>Seu impacto</h3>
+          <p>Você já ajudou a evitar <strong>72kg</strong> de desperdício este mês.</p>
+          <div class="impact-bar"><span></span></div>
+          <p>
+            Meta do mês: 100kg
+          </p>
+        </aside>
+      </div>
+    </section>
+  </body>
 </html>
