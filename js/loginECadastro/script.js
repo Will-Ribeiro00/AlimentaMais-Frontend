@@ -49,7 +49,11 @@ function configurarLogin() {
 
       sessionStorage.setItem("accessToken", resultado.accessToken);
 
-      window.location.href = "../../pags/consumidor/home.html";
+      if(resultado.tipoUsuario === "consumidor"){
+        window.location.href = "../../pags/consumidor/home.html";
+      }else{
+        window.location.href = "../../pags/dashboard/index.html";
+      }
     } catch (error) {
       alert(error.message);
     }
