@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnPerfil.addEventListener("click", (event) => {
     event.preventDefault();
 
-    window.location.href = "../perfil/index.html";
+    window.location.href = "../perfilEstabelecimento/index.html";
   });
 
 });
