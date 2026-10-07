@@ -1,0 +1,909 @@
+<!-- home.html-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =====================================================
+         CONFIGURAÇÕES BÁSICAS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#2F7634">
+
+    <meta name="description" content="Alimenta+ — encontre alimentos, economize e ajude a reduzir o desperdício.">
+
+    <title>Alimenta+ | Início</title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link rel="icon" href="../../imagens/logos/logo.png" type="image/png">
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- =====================================================
+         CSS GLOBAL
+    ====================================================== -->
+
+    <link rel="stylesheet" href="../../css/global/style.css">
+
+
+    <!-- =====================================================
+         CSS ESPECÍFICO DO CONSUMIDOR
+    ====================================================== -->
+
+    <link rel="stylesheet" href="../../css/consumidor/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         APLICAÇÃO DO CONSUMIDOR
+    ====================================================== -->
+
+    <div class="app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
+
+            <div class="sidebar-header">
+
+                <a href="home.html" class="brand" aria-label="Ir para o início do Alimenta+">
+
+                    <img src="../../imagens/logos/logo.png" alt="Alimenta+">
+
+                    <span>
+                        Alimenta+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 NAVEGAÇÃO PRINCIPAL
+            ================================================== -->
+
+            <nav class="sidebar-menu" aria-label="Navegação principal">
+
+
+                <!-- =================================================
+                     INÍCIO
+                ================================================== -->
+
+                <a href="home.html" class="menu-link active" aria-current="page">
+
+                    <img src="../../imagens/icones/inicio.svg" alt="">
+
+                    <span>
+                        Início
+                    </span>
+
+                </a>
+
+
+                <!-- =================================================
+                     MINHAS RESERVAS
+                ================================================== -->
+
+                <a href="reservas.html" class="menu-link">
+
+                    <img src="../../imagens/icones/reservas.svg" alt="">
+
+                    <span>
+                        Minhas Reservas
+                    </span>
+
+                </a>
+
+
+                <!-- =================================================
+                     PERFIL
+                ================================================== -->
+
+                <a href="perfil.html" class="menu-link">
+
+                    <img src="../../imagens/icones/perfil.svg" alt="">
+
+                    <span>
+                        Perfil
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 SAIR
+            ================================================== -->
+
+            <button id="btn-sair" class="menu-link menu-sair" type="button">
+
+                <img src="../../imagens/icones/sair.svg" alt="">
+
+                <span>
+                    Sair
+                </span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =====================================================
+             CONTEÚDO PRINCIPAL
+        ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 HOME
+            ================================================== -->
+
+            <section id="aba-inicio" class="pagina active">
+
+
+                <!-- =================================================
+                     CABEÇALHO DA HOME
+                ================================================== -->
+
+                <header class="home-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            Bem-vindo(a) ao Alimenta+
+                        </span>
+
+                        <h1>
+                            Olá,
+                            <span id="nome-usuario">
+                                usuário
+                            </span>!
+                        </h1>
+
+                        <p>
+                            O que gostaria de comer hoje?
+                        </p>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         DATA
+                    ================================================== -->
+
+                    <div class="data-container" aria-label="Data atual">
+
+                        <span class="data-icon" aria-hidden="true">
+                            •
+                        </span>
+
+                        <span id="data-atual">
+                            00/00/0000
+                        </span>
+
+                    </div>
+
+                </header>
+
+
+                <!-- =================================================
+                     BANNER DE DESTAQUE
+                ================================================== -->
+
+                <section class="hero-banner">
+
+
+                    <!-- =================================================
+                         TEXTO DO BANNER
+                    ================================================== -->
+
+                    <div class="hero-copy">
+
+                        <span class="hero-tag">
+                            MENOS DESPERDÍCIO, MAIS IMPACTO
+                        </span>
+
+                        <h2>
+                            Alimentos bons por preços acessíveis.
+                        </h2>
+
+                        <p>
+                            Aproveite excedentes, economize
+                            e ajude a reduzir o desperdício.
+                        </p>
+
+                        <button class="hero-button" type="button" data-scroll-ofertas>
+                            Explorar ofertas
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         ADILSON
+                         
+                         Observação:
+                         O arquivo oficial do mascote ainda não foi
+                         confirmado no repositório atual. Por isso,
+                         preservamos temporariamente a representação
+                         já utilizada no projeto.
+                    ================================================== -->
+
+                    <div class="hero-mascot-small" aria-label="Adilson, mascote do Alimenta+">
+
+                        <div class="mascot-mini" aria-hidden="true">
+                            🦫
+                        </div>
+
+                        <strong>
+                            Adilson
+                        </strong>
+
+                        <span>
+                            Seu parceiro contra o desperdício.
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     ÁREA DE EXPLORAÇÃO
+                ================================================== -->
+
+                <section class="explorar-section" id="explorar-alimenta">
+
+
+                    <!-- =================================================
+                         BUSCA
+                    ================================================== -->
+
+                    <div class="search-area">
+
+                        <label class="search-box" for="campo-busca">
+
+                            <img class="search-icon" src="../../imagens/icones/lupa.svg" alt="">
+
+                            <input id="campo-busca" type="search" placeholder="Buscar alimentos, lojas ou categorias..."
+                                autocomplete="off" aria-label="Buscar alimentos, lojas ou categorias">
+
+                            <button id="limpar-busca" class="clear-search" type="button" aria-label="Limpar busca">
+                                ×
+                            </button>
+
+                        </label>
+
+
+                        <!-- =================================================
+                             RESULTADO DA BUSCA
+                        ================================================== -->
+
+                        <div id="resultado-busca" class="resultado-busca" aria-live="polite">
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         CABEÇALHO DAS CATEGORIAS
+                    ================================================== -->
+
+                    <div class="categories-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                EXPLORE
+                            </span>
+
+                            <h2>
+                                Categorias
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FILTROS DE CATEGORIA
+                    ================================================== -->
+
+                    <div class="categories-scroll" id="filtros-busca" aria-label="Categorias de alimentos">
+
+
+                        <!-- =================================================
+                             TODOS
+                        ================================================== -->
+
+                        <button class="category-item filtro active" type="button" data-categoria="todos"
+                            aria-pressed="true">
+
+                            <span class="category-circle">
+
+                                <img src="../../imagens/icones/folha.svg" alt="">
+
+                            </span>
+
+                            <span>
+                                Todos
+                            </span>
+
+                        </button>
+
+
+                        <!-- =================================================
+                             PADARIA
+                        ================================================== -->
+
+                        <button class="category-item filtro" type="button" data-categoria="padaria"
+                            aria-pressed="false">
+
+                            <span class="category-circle">
+
+                                <img src="../../imagens/icones/talher.svg" alt="">
+
+                            </span>
+
+                            <span>
+                                Padaria
+                            </span>
+
+                        </button>
+
+
+                        <!-- =================================================
+                             HORTIFRUTI
+                        ================================================== -->
+
+                        <button class="category-item filtro" type="button" data-categoria="hortifruti"
+                            aria-pressed="false">
+
+                            <span class="category-circle">
+
+                                <img src="../../imagens/icones/fruta.svg" alt="">
+
+                            </span>
+
+                            <span>
+                                Hortifruti
+                            </span>
+
+                        </button>
+
+
+                        <!-- =================================================
+                             REFEIÇÕES
+                        ================================================== -->
+
+                        <button class="category-item filtro" type="button" data-categoria="refeicoes"
+                            aria-pressed="false">
+
+                            <span class="category-circle">
+
+                                <img src="../../imagens/icones/talher.svg" alt="">
+
+                            </span>
+
+                            <span>
+                                Refeições
+                            </span>
+
+                        </button>
+
+
+                        <!-- =================================================
+                             BEBIDAS
+                        ================================================== -->
+
+                        <button class="category-item filtro" type="button" data-categoria="bebidas"
+                            aria-pressed="false">
+
+                            <span class="category-circle">
+
+                                <img src="../../imagens/icones/folha_2.svg" alt="">
+
+                            </span>
+
+                            <span>
+                                Bebidas
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         OFERTAS
+                    ================================================== -->
+
+                    <section class="offers-section" id="resultados-ofertas">
+
+
+                        <!-- =================================================
+                             TÍTULO E CONTADOR
+                        ================================================== -->
+
+                        <div class="section-title">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    OPORTUNIDADES
+                                </span>
+
+                                <h2>
+                                    Ofertas perto de você
+                                </h2>
+
+                                <p>
+                                    Produtos excedentes
+                                    com preço acessível.
+                                </p>
+
+                            </div>
+
+
+                            <span class="ofertas-count" id="ofertas-count">
+                                0 ofertas
+                            </span>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             LISTA ÚNICA DE OFERTAS
+                             
+                             Importante:
+                             Busca, categoria e ofertas utilizam
+                             esta mesma lista.
+                        ================================================== -->
+
+                        <div id="grid-ofertas" class="ofertas-lista">
+                        </div>
+
+
+                        <!-- =================================================
+                             ESTADO SEM RESULTADOS
+                        ================================================== -->
+
+                        <div id="estado-sem-ofertas" class="empty-state hidden">
+
+                            <div class="empty-icon" aria-hidden="true">
+                                ⌕
+                            </div>
+
+                            <h3>
+                                Nenhuma oferta encontrada
+                            </h3>
+
+                            <p>
+                                Tente outro termo ou outra categoria.
+                            </p>
+
+                            <button id="btn-limpar-filtros" class="btn-secondary" type="button">
+                                Ver todas
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         MODAL — DETALHES DA OFERTA
+    ========================================================== -->
+
+    <div id="modal-oferta" class="modal-overlay" aria-hidden="true">
+
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+
+
+            <!-- FECHAR -->
+
+            <button id="btn-fechar-modal" class="modal-fechar" type="button" aria-label="Fechar detalhes da oferta">
+                ×
+            </button>
+
+
+            <!-- IMAGEM -->
+
+            <div class="modal-imagem-box">
+
+                <img id="modal-imagem" src="" alt="">
+
+            </div>
+
+
+            <!-- CONTEÚDO -->
+
+            <div class="modal-conteudo">
+
+
+                <!-- CATEGORIA -->
+
+                <span id="modal-categoria" class="modal-categoria">
+                </span>
+
+
+                <!-- TÍTULO -->
+
+                <h2 id="modal-titulo">
+                </h2>
+
+
+                <!-- DESCRIÇÃO -->
+
+                <p id="modal-descricao" class="modal-descricao">
+                </p>
+
+
+                <!-- =================================================
+                     PREÇOS
+                ================================================== -->
+
+                <div class="modal-precos">
+
+
+                    <!-- PREÇO ALIMENTA+ -->
+
+                    <div>
+
+                        <span>
+                            Preço Alimenta+
+                        </span>
+
+                        <strong id="modal-preco">
+                        </strong>
+
+                    </div>
+
+
+                    <!-- PREÇO ORIGINAL -->
+
+                    <div>
+
+                        <span>
+                            Preço original
+                        </span>
+
+                        <del id="modal-preco-original">
+                        </del>
+
+                    </div>
+
+
+                    <!-- DESCONTO -->
+
+                    <div class="desconto-box">
+
+                        <span>
+                            Desconto
+                        </span>
+
+                        <strong id="modal-desconto">
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     INFORMAÇÕES DA OFERTA
+                ================================================== -->
+
+                <div class="modal-info">
+
+
+                    <!-- ESTABELECIMENTO -->
+
+                    <div class="modal-info-item">
+
+                        <span class="modal-label">
+                            Estabelecimento
+                        </span>
+
+                        <strong id="modal-estabelecimento">
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ENDEREÇO -->
+
+                    <div class="modal-info-item">
+
+                        <span class="modal-label">
+                            Endereço
+                        </span>
+
+                        <span id="modal-endereco">
+                        </span>
+
+                    </div>
+
+
+                    <!-- RETIRADA -->
+
+                    <div class="modal-info-item">
+
+                        <span class="modal-label">
+                            Retirada
+                        </span>
+
+                        <span id="modal-retirada">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESTOQUE -->
+
+                <div id="modal-estoque" class="modal-estoque">
+                </div>
+
+
+                <!-- RESERVAR -->
+
+                <button id="btn-reservar" class="btn-reservar" type="button">
+                    Reservar oferta
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         MODAL — CONFIRMAÇÃO DA RESERVA
+    ========================================================== -->
+
+    <div id="modal-confirmacao" class="modal-overlay" aria-hidden="true">
+
+        <div class="modal-confirmacao" role="dialog" aria-modal="true" aria-labelledby="titulo-confirmacao">
+
+
+            <!-- ÍCONE -->
+
+            <div class="confirmacao-icon" aria-hidden="true">
+                ✓
+            </div>
+
+
+            <!-- STATUS -->
+
+            <span class="eyebrow">
+                RESERVA CONFIRMADA
+            </span>
+
+
+            <!-- TÍTULO -->
+
+            <h2 id="titulo-confirmacao">
+                Reserva realizada!
+            </h2>
+
+
+            <!-- DESCRIÇÃO -->
+
+            <p>
+                Sua oferta foi reservada com sucesso.
+            </p>
+
+
+            <!-- =================================================
+                 CÓDIGO DA RESERVA
+            ================================================== -->
+
+            <div class="codigo-reserva-box">
+
+                <span>
+                    Código da sua reserva
+                </span>
+
+                <strong id="confirmacao-codigo">
+                    #ALIMENTA-0000
+                </strong>
+
+                <button id="btn-copiar-codigo" type="button">
+                    Copiar código
+                </button>
+
+            </div>
+
+
+            <!-- IR PARA RESERVAS -->
+
+            <button id="btn-ir-reservas" class="btn-primary" type="button">
+                Ver minhas reservas
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         CHATBOT / SUPORTE
+    ========================================================== -->
+
+    <button id="btn-chatbot" class="chatbot-button" type="button" aria-label="Abrir suporte Alimenta+"
+        aria-expanded="false">
+        💬
+    </button>
+
+
+    <section id="chatbot" class="chatbot" aria-hidden="true">
+
+
+        <!-- =================================================
+             CABEÇALHO DO CHATBOT
+        ================================================== -->
+
+        <header class="chatbot-header">
+
+            <div class="chatbot-header-info">
+
+                <div class="chatbot-avatar" aria-hidden="true">
+                    A+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Suporte Alimenta+
+                    </strong>
+
+                    <span>
+                        Atendimento automático
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button id="btn-fechar-chatbot" type="button" aria-label="Fechar suporte">
+                ×
+            </button>
+
+        </header>
+
+
+        <!-- =================================================
+             MENSAGENS
+        ================================================== -->
+
+        <div id="chatbot-mensagens" class="chatbot-mensagens">
+
+            <div class="chatbot-mensagem bot">
+
+                <p>
+                    Olá! Como posso ajudar hoje?
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 OPÇÕES RÁPIDAS
+            ================================================== -->
+
+            <div class="chatbot-opcoes">
+
+
+                <button class="chatbot-opcao" type="button" data-pergunta="pagamento">
+                    Pagamento
+                </button>
+
+
+                <button class="chatbot-opcao" type="button" data-pergunta="reserva">
+                    Reserva
+                </button>
+
+
+                <button class="chatbot-opcao" type="button" data-pergunta="produto">
+                    Produtos
+                </button>
+
+
+                <button class="chatbot-opcao" type="button" data-pergunta="troca">
+                    Trocas
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ENTRADA DO CHATBOT
+        ================================================== -->
+
+        <form id="chatbot-form" class="chatbot-input-area">
+
+            <input id="chatbot-input" type="text" placeholder="Digite sua dúvida..." autocomplete="off"
+                aria-label="Digite sua dúvida">
+
+            <button type="submit" aria-label="Enviar mensagem">
+                ↑
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================================================
+         TOAST / FEEDBACK
+    ========================================================== -->
+
+    <div id="toast" class="toast" role="status" aria-live="polite">
+
+        <span id="toast-mensagem">
+        </span>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT DA HOME DO CONSUMIDOR
+         
+         A Home agora possui seu próprio controlador.
+         Não usamos cliente.js nem cammom.js da arquitetura antiga.
+    ========================================================== -->
+
+    <script type="module" src="../../js/consumidor/home.js"></script>
+
+</body>
+
+</html>
