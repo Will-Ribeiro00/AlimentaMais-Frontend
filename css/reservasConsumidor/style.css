@@ -1,0 +1,74 @@
+.cabecalho-reservas { justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 30px; }
+.cabecalho-esquerda { display: flex; align-items: center; }
+
+.data-atual {
+  min-height: 40px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  border: 1px solid var(--verde-escuro);
+  border-radius: 8px;
+}
+
+.lista-reservas { display: flex; flex-direction: column; gap: 14px; max-width: 1000px; }
+
+.reserva {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(0, 0.9fr) minmax(0, 1.1fr) 150px;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: var(--creme);
+  border: 1px solid var(--verde-escuro);
+  border-radius: 8px;
+}
+
+.reserva__campo { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.reserva__campo label { font-size: 0.7rem; font-weight: 500; }
+.reserva__campo strong { font-size: 0.85rem; overflow-wrap: anywhere; }
+
+.status {
+  width: max-content;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.status.aguardando { background: #f8f0d8; color: #8a741f; }
+.status.retirada   { background: var(--verde-claro); color: var(--verde-floresta); }
+.status.cancelada  { background: #f7e5e2; color: #c64b42; }
+
+.botao-cancelar {
+  min-height: 40px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--laranja);
+  color: var(--branco);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.botao-cancelar:hover { opacity: 0.9; }
+.botao-cancelar:disabled { background: #dddcd5; color: #87867f; cursor: not-allowed; opacity: 1; }
+
+.sem-reservas { padding: 24px; text-align: center; font-size: 0.95rem; border: 1px dashed var(--verde-escuro); border-radius: 8px; }
+.sem-reservas a { color: var(--laranja); font-weight: 600; }
+
+@media (max-width: 1100px) {
+  .reserva { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 14px; }
+  .reserva__acao { grid-column: 1 / -1; }
+  .botao-cancelar { width: 100%; }
+}
+@media (max-width: 750px) {
+  .reserva { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .data-atual { display: none; }
+}
+@media (max-width: 520px) {
+  .reserva { grid-template-columns: 1fr; }
+}

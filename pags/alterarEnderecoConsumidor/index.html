@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alimenta+ | Excluir Conta</title>
+  <title>Alimenta+ | Alterar Endereço</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="../../css/perfilEstabelecimento/style.css">
+  <link rel="stylesheet" href="../../css/perfilConsumidor/style.css">
 </head>
 <body>
 
@@ -49,28 +49,19 @@
   </aside>
 
   <main class="conteudo-principal">
-    
     <!-- Botão de Voltar -->
-    <a href="/pags/perfilEstabelecimento/index.html" class="botao-voltar">
+    <a href="/pags/perfilConsumidor/index.html" class="botao-voltar">
       <img src="../../imagens/icones/voltar.svg" alt="Voltar">
     </a>
 
-    <h1 class="titulo-principal">Excluir conta</h1>
+    <h1 class="titulo-principal">Alterar endereço</h1>
 
-    <!-- Secção de Exclusão -->
+    <!-- Formulário de Alterar Endereço -->
     <form class="formulario-padrao">
-      <p class="texto-exclusao">
-        Você tem certeza que quer excluir sua conta?<br>
-        A exclusão de conta é <strong>permanente</strong> e não poderá ser refeita.
-      </p>
-
-
-      <label class="grupo-checkbox">
-        <input type="checkbox" required>
-        <span>Sim, tenho certeza que quero excluir minha conta.</span>
-      </label>
+      <input type="text" value="Av. Paulista, 156, São Paulo - SP, 01310-000" class="input-padrao" disabled>
+      <input type="text" placeholder="Digite o novo endereço" class="input-padrao" required>
       
-      <button type="submit" class="btn-excluir">Excluir minha conta</button>
+      <button type="submit" class="btn-salvar">Salvar alterações</button>
     </form>
 
   </main>

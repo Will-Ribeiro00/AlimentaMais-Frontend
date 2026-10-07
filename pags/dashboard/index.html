@@ -1,384 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Dashboard</title>
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Padaria São João - Dashboard
-    </title>
-
-
-    <!-- Font Awesome -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-
-    <!-- CSS DO DASHBOARD -->
-
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
-        rel="stylesheet"
-        href="/css/dashboard/style.css">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-    
-        <!-- CSS GLOBAL -->  
-    <link
-        rel="stylesheet"
-        href="/css/global/style.css">
-    >
-
-
-    <!-- CSS DO CHATBOT -->
-
-    <link
-        rel="stylesheet"
-        href="../chatbot/widget.css"
-    >
-
-</head>
-
-<body>
-
-<div class="app">
-
-
-    <!-- =========================================
-         SIDEBAR
-    ========================================== -->
-
-    <aside
-        class="sidebar"
-        id="sidebar"
-    >
-
-        <div>
-
-            <div class="logo-area">
-
-                <div class="logo">
-
-                    <i class="fa-solid fa-bread-slice"></i>
-
-                    <span>+</span>
-
-                </div>
-
-                <h2>
-                    Padaria São João
-                </h2>
-
-            </div>
-
-
-            <nav class="navigation">
-
-                <a
-                    class="nav-item active"
-                    href="index.html"
-                >
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Dashboard</span>
-                </a>
-
-
-                <a
-                    class="nav-item"
-                    href="../ofertas/index.html"
-                >
-                    <i class="fa-solid fa-tag"></i>
-                    <span>Minhas Ofertas</span>
-                </a>
-
-
-                <a
-                    class="nav-item"
-                    href="../reservas/index.html"
-                >
-                    <i class="fa-regular fa-calendar"></i>
-                    <span>Reservas</span>
-                </a>
-
-
-                <a
-                    class="nav-item"
-                    href="/pags/perfilEstabelecimento/index.html"
-                >
-                    <i class="fa-solid fa-circle-user"></i>
-                    <span>Perfil</span>
-                </a>
-
-            </nav>
-
+    <link rel="stylesheet" href="/css/global/style.css" />
+    <link rel="stylesheet" href="/css/dashboard/style.css" />
+    <link rel="stylesheet" href="../chatbot/widget.css" />
+  </head>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <nav class="navegacao-lateral">
+        <div class="logo-container">
+          <img src="../../imagens/logos/logo.png" alt="Logo Alimenta+" class="logo" />
+          <h3 class="nome-projeto">Alimenta+</h3>
         </div>
 
+        <ul class="lista-menu">
+          <li><a href="index.html" class="ativo"><i class="fa-solid fa-chart-line"></i>Dashboard</a></li>
+          <li><a href="../ofertas/index.html"><i class="fa-solid fa-tag"></i>Minhas Ofertas</a></li>
+          <li><a href="../reservas/index.html"><i class="fa-regular fa-calendar"></i>Reservas</a></li>
+          <li><a href="/pags/perfilEstabelecimento/index.html"><i class="fa-solid fa-circle-user"></i>Perfil</a></li>
+        </ul>
 
-        <a
-            href="#"
-            class="nav-item"
-        >
-
-            <i
-                class="fa-solid fa-arrow-right-from-bracket"
-            ></i>
-
-            <span>
-                Sair
-            </span>
-
+        <a href="#" class="link-sair">
+          <img src="../../imagens/icones/sair.svg" alt="Ícone Sair" />
+          Sair
         </a>
-
+      </nav>
     </aside>
 
-
-    <div
-        class="overlay"
-        id="overlay"
-    ></div>
-
-
-    <!-- =========================================
-         MAIN
-    ========================================== -->
-
-    <main class="main">
-
-
-        <!-- HEADER -->
-
-        <header class="header">
-
-            <div class="header-left">
-
-
-                <div class="welcome">
-
-                    <h1>
-                        Olá, Padaria São João!
-                    </h1>
-
-                    <p>
-                        Aqui está o resumo de hoje.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="date">
-
-                <i
-                    class="fa-regular fa-calendar"
-                ></i>
-
-                <span
-                    id="currentDate"
-                ></span>
-
-            </div>
-
-        </header>
-
-
-        <!-- =========================================
-             CARDS
-        ========================================== -->
-
-        <section
-            class="stats"
-            id="stats"
-        ></section>
-
-
-        <!-- =========================================
-             IMPACTO E RECEITA
-        ========================================== -->
-
-        <section class="middle">
-
-
-            <article class="panel impact">
-
-                <div class="panel-title">
-
-                    <h2>
-                        Impacto este mês
-                    </h2>
-
-                </div>
-
-
-                <div
-                    class="impact-grid"
-                    id="impactGrid"
-                ></div>
-
-            </article>
-
-
-            <article class="panel revenue">
-
-                <div class="revenue-icon">
-
-                    <i class="fa-solid fa-coins"></i>
-
-                </div>
-
-
-                <h2>
-                    Receita recuperada
-                </h2>
-
-
-                <strong
-                    id="revenueValue"
-                >
-                    R$ 0,00
-                </strong>
-
-
-                <p
-                    id="revenueCompare"
-                >
-                    Sem comparação disponível.
-                </p>
-
-            </article>
-
-        </section>
-
-
-        <!-- =========================================
-             GRÁFICO
-        ========================================== -->
-
-        <section class="panel metrics">
-
-            <div class="metrics-title">
-
-                <h2>
-                    Métricas mensais
-                </h2>
-
-                <span
-                    id="chartPeriod"
-                ></span>
-
-            </div>
-
-
-            <div class="chart-wrap">
-
-                <svg
-                    id="metricsChart"
-                    aria-label="Gráfico mensal"
-                ></svg>
-
-            </div>
-
-
-            <div class="legend">
-
-                <span>
-
-                    <i
-                        class="legend-line orange"
-                    ></i>
-
-                    Reservas
-
-                </span>
-
-
-                <span>
-
-                    <i
-                        class="legend-line green"
-                    ></i>
-
-                    Alimentos salvos
-
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             ÚLTIMAS RESERVAS
-        ========================================== -->
-
-        <section
-            class="panel dashboard-quick"
-        >
-
-            <div class="quick-head">
-
-                <div>
-
-                    <h2>
-                        Últimas reservas
-                    </h2>
-
-                    <p>
-                        Dados vindos da tela de Reservas.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="../reservas/index.html"
-                >
-                    Ver reservas
-                </a>
-
-            </div>
-
-
-            <div
-                id="recentReservations"
-                class="recent-list"
-            ></div>
-
-        </section>
-
+    <div class="overlay" id="overlay"></div>
+
+    <main class="conteudo-principal">
+      <header class="cabecalho-pagina">
+        <div class="cabecalho-esquerda">
+          <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="cabecalho-perfil">
+            <h2>Olá, Padaria São João!</h2>
+            <p>Aqui está o resumo de hoje.</p>
+          </div>
+        </div>
+
+        <div class="date">
+          <i class="fa-regular fa-calendar"></i>
+          <span id="currentDate"></span>
+        </div>
+      </header>
+
+      <h1 class="titulo-principal">Dashboard</h1>
+
+      <!-- CARDS -->
+      <section class="stats" id="stats"></section>
+
+      <!-- IMPACTO E RECEITA -->
+      <section class="middle">
+        <article class="panel impact">
+          <div class="panel-title"><h2>Impacto este mês</h2></div>
+          <div class="impact-grid" id="impactGrid"></div>
+        </article>
+
+        <article class="panel revenue">
+          <div class="revenue-icon"><i class="fa-solid fa-coins"></i></div>
+          <h2>Receita recuperada</h2>
+          <strong id="revenueValue">R$ 0,00</strong>
+          <p id="revenueCompare">Sem comparação disponível.</p>
+        </article>
+      </section>
+
+      <!-- GRÁFICO -->
+      <section class="panel metrics">
+        <div class="metrics-title">
+          <h2>Métricas mensais</h2>
+          <span id="chartPeriod"></span>
+        </div>
+
+        <div class="chart-wrap">
+          <svg id="metricsChart" aria-label="Gráfico mensal"></svg>
+        </div>
+
+        <div class="legend">
+          <span><i class="legend-line orange"></i>Reservas</span>
+          <span><i class="legend-line green"></i>Alimentos salvos</span>
+        </div>
+      </section>
+
+      <!-- ÚLTIMAS RESERVAS -->
+      <section class="panel dashboard-quick">
+        <div class="quick-head">
+          <div>
+            <h2>Últimas reservas</h2>
+            <p>Dados vindos da tela de Reservas.</p>
+          </div>
+          <a href="../reservas/index.html">Ver reservas</a>
+        </div>
+
+        <div id="recentReservations" class="recent-list"></div>
+      </section>
     </main>
 
-</div>
-
-
-<!-- =========================================
-     CHATBOT
-========================================== -->
-
-<script src="../chatbot/widget.js"></script>
-
-
-<!-- =========================================
-     BANCO COMPARTILHADO
-========================================== -->
-
-<script src="/js/data.js"></script>
-
-
-<!-- =========================================
-     SCRIPT DO DASHBOARD
-========================================== -->
-
-<script src="/js/dashboard/script.js"></script>
-
-
-</body>
-
+    <script src="../chatbot/widget.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/dashboard/script.js"></script>
+  </body>
 </html>

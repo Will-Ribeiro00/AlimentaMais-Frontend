@@ -1,3 +1,4 @@
+/* 1. Variáveis Globais (Cores Oficiais do Figma) */
 :root {
   --laranja: #F2522F;
   --verde-floresta: #2F7634;
@@ -10,6 +11,7 @@
   --branco: #FFFFFF; 
 }
 
+/* 2. Reset Básico */
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +25,7 @@ body {
   background-color: var(--creme); 
 }
 
+/* 3. Sidebar (Esquerda) */
 .sidebar {
   width: 300px;
   background-color: var(--verde-claro);
@@ -80,6 +83,7 @@ body {
   margin-top: auto;
 }
 
+/* 4. Conteúdo Principal (Direita) */
 .conteudo-principal {
   flex: 1;
   background-color: var(--creme);
@@ -105,6 +109,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* 5. Tabela / Quadro de Dados */
 .quadro-dados {
   background-color: var(--creme);
   border: 1px solid var(--verde-escuro);
@@ -171,7 +176,7 @@ a.item-dado:hover {
   font-size: 0.9rem;
   color: #333;
 }
-
+/* 6. Formulários e Botões (Alterar Dados) */
 .conteudo-principal {
   padding: 50px 80px; 
 }

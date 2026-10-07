@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnReservas.addEventListener("click", (event) => {
     event.preventDefault();
 
-    window.location.href = "../reservas/index.html";
+    window.location.href = "../reservasConsumidor/index.html";
   });
 
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnPerfil.addEventListener("click", (event) => {
     event.preventDefault();
 
-    window.location.href = "../perfilEstabelecimento/index.html";
+    window.location.href = "../perfilConsumidor/index.html";
   });
 
 });

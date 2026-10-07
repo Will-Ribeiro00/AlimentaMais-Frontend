@@ -1,159 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alimenta+ | Consumidor</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"/>
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="../../css/global/style.css" />
     <link rel="stylesheet" href="../../css/consumidor/style.css" />
   </head>
   <body>
-    <header class="container topbar">
-      <div class="brand">
-        <div class="brand__logo">+</div>
-        <div class="brand__text">Alimenta+</div>
-      </div>
-
-      <nav class="topbar__nav" aria-label="Menu principal">
-        <a href="#inicio">Início</a>
-        <a href="#ofertas">Ofertas</a>
-        <a href="#reservas">Reservas</a>
-        <a href="#impacto">Impacto</a>
-      </nav>
-
-  <div class="topbar__actions">
-  <button type="button" class="botao botao--outline" id="btnPerfil">
-    Perfil
-  </button>
-
-  <button type="button" class="botao botao--primary" id="btnSair">
-    Sair
-  </button>
-</div>
-    </header>
-
-    <main id="inicio" class="container hero">
-      <section class="hero__content">
-        <span class="eyebrow">❤ Consumidor ativo</span>
-        <h1>
-          Menos desperdício,
-          <span class="hero__title-accent">mais economia.</span>
-        </h1>
-        <p>
-          Descubra ofertas próximas de você, reserve alimentos em boa condição e
-          acompanhe o impacto positivo que suas escolhas geram na comunidade.
-        </p>
-
-        <div class="hero__actions">
-          <button type="button" class="botao botao--primary">Ver ofertas</button>
-          <button type="button" class="botao botao--outline">Minhas reservas</button>
+    <aside class="sidebar" id="sidebar">
+      <nav class="navegacao-lateral">
+        <div class="logo-container">
+          <img src="../../imagens/logos/logo.png" alt="Logo Alimenta+" class="logo" />
+          <h3 class="nome-projeto">Alimenta+</h3>
         </div>
 
-        <div class="hero__stats">
-          <div class="mini-stat">
-            <strong>24</strong>
-            <span>ofertas hoje</span>
-          </div>
-          <div class="mini-stat">
-            <strong>8</strong>
-            <span>reservas ativas</span>
-          </div>
-          <div class="mini-stat">
-            <strong>92kg</strong>
-            <span>salvos este mês</span>
-          </div>
+        <ul class="lista-menu">
+          <li><a href="#inicio" id="btnInicio" class="ativo"><i class="fa-solid fa-house"></i>Início</a></li>
+          <li><a href="#reservas" id="btnReservas"><i class="fa-regular fa-calendar"></i>Minhas Reservas</a></li>
+          <li><a href="#" id="btnPerfil"><i class="fa-regular fa-circle-user"></i>Perfil</a></li>
+        </ul>
+
+        <a href="#" id="btnSair" class="link-sair">
+          <img src="../../imagens/icones/sair.svg" alt="Ícone Sair" />
+          Sair
+        </a>
+      </nav>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="conteudo-principal" id="inicio">
+      <header class="cabecalho-pagina">
+        <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="cabecalho-perfil">
+          <h2>Olá, Marcelo Alves!</h2>
+          <p>O que gostaria de comer hoje?</p>
+        </div>
+      </header>
+
+      <!-- BUSCA -->
+      <div class="busca">
+        <input type="search" id="campoBusca" placeholder="Buscar alimentos, lojas..." aria-label="Buscar alimentos e lojas" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <!-- CATEGORIAS -->
+      <div class="categorias" role="group" aria-label="Categorias">
+        <button type="button" class="categoria ativa" data-categoria="todos">
+          <span class="categoria__icone"><i class="fa-solid fa-table-cells-large"></i></span>
+          Todos
+        </button>
+        <button type="button" class="categoria" data-categoria="padaria">
+          <span class="categoria__icone"><i class="fa-solid fa-bread-slice"></i></span>
+          Padaria
+        </button>
+        <button type="button" class="categoria" data-categoria="hortifruti">
+          <span class="categoria__icone"><i class="fa-solid fa-apple-whole"></i></span>
+          Hortifruti
+        </button>
+        <button type="button" class="categoria" data-categoria="refeicoes">
+          <span class="categoria__icone"><i class="fa-solid fa-utensils"></i></span>
+          Refeições
+        </button>
+        <button type="button" class="categoria" data-categoria="bebidas">
+          <span class="categoria__icone"><i class="fa-solid fa-glass-water"></i></span>
+          Bebidas
+        </button>
+      </div>
+
+      <!-- OFERTAS -->
+      <section id="ofertas">
+        <h1 class="titulo-principal">Ofertas perto de você</h1>
+
+        <div class="lista-ofertas" id="listaOfertas">
+          <article class="oferta" data-categoria="padaria" data-nome="Kit Padaria" data-descricao="5 pães doce + 5 pães salgado" data-original="30.00" data-preco="9.99" data-estabelecimento="Padaria São João" data-endereco="Av. Paulista, 156, São Paulo - SP" data-retirada="Hoje, até as 20:30" data-estoque="5">
+            <div class="oferta__icone"><i class="fa-solid fa-bread-slice"></i></div>
+            <div class="oferta__corpo">
+              <div class="oferta__nome">
+                <strong>Kit Padaria:</strong>
+                <small>Retirada até as 20:30</small>
+              </div>
+              <p class="oferta__desc">5 pães doce + 5 pães salgado</p>
+              <div class="oferta__preco">
+                <span class="preco-novo">R$ 9,99</span>
+                <s class="preco-antigo">R$ 30,00</s>
+                <button type="button" class="offer-card__button">Reservar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="oferta" data-categoria="hortifruti" data-nome="Kit Frutas" data-descricao="12 bananas + 12 maçãs + 12 laranjas + 12 limões + 12 goiabas" data-original="55.00" data-preco="15.99" data-estabelecimento="Hortifruti Boa Safra" data-endereco="Rua Augusta, 920, São Paulo - SP" data-retirada="Hoje, até as 20:30" data-estoque="3">
+            <div class="oferta__icone"><i class="fa-solid fa-apple-whole"></i></div>
+            <div class="oferta__corpo">
+              <div class="oferta__nome">
+                <strong>Kit Frutas:</strong>
+                <small>Retirada até as 20:30</small>
+              </div>
+              <p class="oferta__desc">12 de banana + 12 maçãs + 12 laranjas + 12 limões + 12 goiabas</p>
+              <div class="oferta__preco">
+                <span class="preco-novo">R$ 15,99</span>
+                <s class="preco-antigo">R$ 55,00</s>
+                <button type="button" class="offer-card__button">Reservar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="oferta" data-categoria="bebidas" data-nome="Kit Danones" data-descricao="4 cartelas de danoninho de morango + 4 cartelas de danone de morango" data-original="60.00" data-preco="30.00" data-estabelecimento="Mercado Bom Preço" data-endereco="Av. Brig. Luís Antônio, 400, São Paulo - SP" data-retirada="Hoje, até as 18:45" data-estoque="4">
+            <div class="oferta__icone"><i class="fa-solid fa-glass-water"></i></div>
+            <div class="oferta__corpo">
+              <div class="oferta__nome">
+                <strong>Kit Danones:</strong>
+                <small>Retirada até as 18:45</small>
+              </div>
+              <p class="oferta__desc">4 cartelas de danoninho de morango + 4 cartelas de danone de morango</p>
+              <div class="oferta__preco">
+                <span class="preco-novo">R$ 30,00</span>
+                <s class="preco-antigo">R$ 60,00</s>
+                <button type="button" class="offer-card__button">Reservar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="oferta" data-categoria="refeicoes" data-nome="Combo de salgados" data-descricao="Coxinhas, esfihas e empadas fresquinhas" data-original="32.00" data-preco="15.90" data-estabelecimento="Padaria São João" data-endereco="Av. Paulista, 156, São Paulo - SP" data-retirada="Hoje, até as 19:00" data-estoque="6">
+            <div class="oferta__icone"><i class="fa-solid fa-utensils"></i></div>
+            <div class="oferta__corpo">
+              <div class="oferta__nome">
+                <strong>Combo de salgados:</strong>
+                <small>Retirada até as 19:00</small>
+              </div>
+              <p class="oferta__desc">Coxinhas, esfihas e empadas fresquinhas</p>
+              <div class="oferta__preco">
+                <span class="preco-novo">R$ 15,90</span>
+                <s class="preco-antigo">R$ 32,00</s>
+                <button type="button" class="offer-card__button">Reservar</button>
+              </div>
+            </div>
+          </article>
+
+          <p class="sem-resultado" id="semResultado" hidden>Nenhuma oferta encontrada.</p>
         </div>
       </section>
 
-      <aside class="hero__visual" aria-label="Resumo do consumidor">
-        <div class="dashboard-card">
-          <div class="offer-highlight">
-            <div>
-              <span class="offer-highlight__tag">Mais procurado</span>
-              <strong>Kit padaria</strong>
-              <small>Padaria São João • 1,2 km</small>
-            </div>
-            <div class="price-box">
-              <span class="old-price">R$ 19,90</span>
-              <span class="new-price">R$ 9,90</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="dashboard-card">
-          <div class="reservation-list">
-            <div class="reservation-item">
-              <div class="reservation-item__meta">
-                <strong>Retirada hoje</strong>
-                <small>3 itens • 18:30h</small>
-              </div>
-              <span class="pill pill--success">Confirmada</span>
-            </div>
-            <div class="reservation-item">
-              <div class="reservation-item__meta">
-                <strong>Oferta de salgado</strong>
-                <small>2 itens • 19:00h</small>
-              </div>
-              <span class="pill pill--success">Disponível</span>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </main>
-
-    <section id="ofertas" class="container main-section">
-      <div class="section-header">
-        <h2>Ofertas em destaque</h2>
-        <a href="#" class="link-more">Ver todas</a>
-      </div>
-
-      <div class="cards-grid">
-        <article class="offer-card">
-          <span class="offer-card__badge">Padaria</span>
-          <h3>Kit café da manhã</h3>
-          <p>Pães, frutas e café artesanal prontos para retirada.</p>
-          <div class="offer-card__meta">
-            <span class="offer-card__price">R$ 12,50</span>
-            <button type="button" class="offer-card__button">Reservar</button>
-          </div>
-        </article>
-
-        <article class="offer-card">
-          <span class="offer-card__badge">Salgados</span>
-          <h3>Combo de salgados</h3>
-          <p>Seleção de coxinhas, esfihas e empadas fresquinhas.</p>
-          <div class="offer-card__meta">
-            <span class="offer-card__price">R$ 15,90</span>
-            <button type="button" class="offer-card__button">Reservar</button>
-          </div>
-        </article>
-
-        <article class="offer-card">
-          <span class="offer-card__badge">Sobremesas</span>
-          <h3>Box de doces</h3>
-          <p>Doces do dia em pacote especial para aproveitar antes do fim.</p>
-          <div class="offer-card__meta">
-            <span class="offer-card__price">R$ 9,80</span>
-            <button type="button" class="offer-card__button">Reservar</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="container main-section" id="reservas">
-      <div class="info-grid">
-        <div class="panel">
-          <h3>Minhas reservas</h3>
+      <!-- RESERVAS E IMPACTO -->
+      <section class="info-grid" id="reservas">
+        <div class="painel">
+          <h2>Minhas reservas</h2>
 
           <div class="reservation-item--large">
             <div>
               <strong>Kit padaria</strong>
-              <div>Dia 12/10 • 18:30h</div>
+              <span>Dia 12/10 • 18:30h</span>
             </div>
             <span class="pill pill--success">Confirmada</span>
           </div>
@@ -161,30 +172,117 @@
           <div class="reservation-item--large">
             <div>
               <strong>Combo de sobremesas</strong>
-              <div>Dia 13/10 • 19:00h</div>
+              <span>Dia 13/10 • 19:00h</span>
             </div>
-            <span class="pill pill--success">Pendente</span>
+            <span class="pill pill--pending">Pendente</span>
           </div>
 
           <div class="reservation-item--large">
             <div>
               <strong>Mini café da manhã</strong>
-              <div>Dia 14/10 • 08:00h</div>
+              <span>Dia 14/10 • 08:00h</span>
             </div>
             <span class="pill pill--success">Disponível</span>
           </div>
         </div>
 
-        <aside id="impacto" class="panel">
-          <h3>Seu impacto</h3>
+        <aside class="painel" id="impacto">
+          <h2>Seu impacto</h2>
           <p>Você já ajudou a evitar <strong>72kg</strong> de desperdício este mês.</p>
           <div class="impact-bar"><span></span></div>
-          <p>
-            Meta do mês: 100kg
-          </p>
+          <p class="meta">Meta do mês: 100kg</p>
         </aside>
+      </section>
+    </main>
+
+    <!-- TELA: DETALHES DA OFERTA -->
+    <div class="modal-overlay" id="modalOferta" role="dialog" aria-modal="true" aria-labelledby="ofertaTitulo">
+      <div class="modal-consumidor">
+        <button class="modal-fechar" id="fecharOferta" type="button" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="modal-icone"><i class="fa-solid fa-bread-slice" id="ofertaIcone"></i></div>
+
+        <dl class="modal-dados">
+          <div><dt>Produto:</dt><dd id="ofertaTitulo"></dd></div>
+          <div><dt>Descrição:</dt><dd id="ofertaDescricao"></dd></div>
+          <div><dt>Preço Original:</dt><dd id="ofertaOriginal"></dd></div>
+          <div><dt>Preço Alimenta+:</dt><dd id="ofertaPreco"></dd></div>
+          <div><dt>Desconto:</dt><dd id="ofertaDesconto"></dd></div>
+          <div><dt>Estabelecimento:</dt><dd id="ofertaEstabelecimento"></dd></div>
+          <div><dt>Endereço:</dt><dd id="ofertaEndereco"></dd></div>
+          <div><dt>Retirada:</dt><dd id="ofertaRetirada"></dd></div>
+        </dl>
+
+        <button class="botao-reservar" id="btnConfirmarReserva" type="button">Reservar</button>
+        <p class="modal-estoque" id="ofertaEstoque"></p>
       </div>
-    </section>
+    </div>
+
+    <!-- TELA: RESERVA CONFIRMADA -->
+    <div class="modal-overlay" id="modalConfirmada" role="dialog" aria-modal="true" aria-labelledby="confTitulo">
+      <div class="modal-consumidor modal-consumidor--sucesso">
+        <button class="modal-fechar" id="fecharConfirmada" type="button" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+
+        <h2 id="confTitulo">Reserva confirmada!</h2>
+        <p class="modal-sub">Sua reserva foi confirmada com sucesso.</p>
+        <p class="modal-codigo">O código da sua reserva é <strong id="confCodigo"></strong></p>
+
+        <dl class="modal-dados">
+          <div><dt>Estabelecimento:</dt><dd id="confEstabelecimento"></dd></div>
+          <div><dt>Endereço:</dt><dd id="confEndereco"></dd></div>
+          <div><dt>Retirada:</dt><dd id="confRetirada"></dd></div>
+        </dl>
+
+        <a class="link-reservas" id="linkMinhasReservas" href="../reservasConsumidor/index.html">Ver minhas reservas</a>
+      </div>
+    </div>
+
     <script type="module" src="/js/consumidor/script.js"></script>
+    <script src="/js/consumidor/ofertas.js"></script>
+    <script>
+      /* Busca e filtro por categoria (apenas visual, não interfere no script.js) */
+      (function () {
+        var campo = document.getElementById("campoBusca");
+        var botoes = document.querySelectorAll(".categoria");
+        var ofertas = document.querySelectorAll(".oferta");
+        var vazio = document.getElementById("semResultado");
+        var categoria = "todos";
+
+        function filtrar() {
+          var termo = campo.value.trim().toLowerCase();
+          var visiveis = 0;
+          ofertas.forEach(function (o) {
+            var ok =
+              (categoria === "todos" || o.dataset.categoria === categoria) &&
+              o.textContent.toLowerCase().indexOf(termo) !== -1;
+            o.hidden = !ok;
+            if (ok) visiveis++;
+          });
+          vazio.hidden = visiveis > 0;
+        }
+
+        botoes.forEach(function (b) {
+          b.addEventListener("click", function () {
+            botoes.forEach(function (x) { x.classList.remove("ativa"); });
+            b.classList.add("ativa");
+            categoria = b.dataset.categoria;
+            filtrar();
+          });
+        });
+        campo.addEventListener("input", filtrar);
+
+        /* Menu mobile */
+        var side = document.getElementById("sidebar");
+        var ov = document.getElementById("overlay");
+        var mm = document.getElementById("mobileMenu");
+        function fechar() { side.classList.remove("open"); ov.classList.remove("active"); mm.setAttribute("aria-expanded", "false"); }
+        mm.addEventListener("click", function () {
+          var aberto = side.classList.toggle("open");
+          ov.classList.toggle("active", aberto);
+          mm.setAttribute("aria-expanded", String(aberto));
+        });
+        ov.addEventListener("click", fechar);
+      })();
+    </script>
   </body>
 </html>
