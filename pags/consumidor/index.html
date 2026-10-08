@@ -28,12 +28,12 @@
         </div>
 
         <ul class="lista-menu">
-          <li><a href="#inicio" id="btnInicio" class="ativo"><i class="fa-solid fa-house"></i>Início</a></li>
-          <li><a href="#reservas" id="btnReservas"><i class="fa-regular fa-calendar"></i>Minhas Reservas</a></li>
-          <li><a href="#" id="btnPerfil"><i class="fa-regular fa-circle-user"></i>Perfil</a></li>
+          <li><a href="/pags/consumidor/index.html" id="btnInicio" class="ativo"><i class="fa-solid fa-house"></i>Início</a></li>
+          <li><a href="/pags/reservas/index.html" id="btnReservas"><i class="fa-regular fa-calendar"></i>Minhas Reservas</a></li>
+          <li><a href="/pags/perfilConsumidor/index.html" id="btnPerfil"><i class="fa-regular fa-circle-user"></i>Perfil</a></li>
         </ul>
 
-        <a href="#" id="btnSair" class="link-sair">
+        <a href="/index.html" id="btnSair" class="link-sair">
           <img src="../../imagens/icones/sair.svg" alt="Ícone Sair" />
           Sair
         </a>
@@ -240,7 +240,7 @@
     <script type="module" src="/js/consumidor/script.js"></script>
     <script src="/js/consumidor/ofertas.js"></script>
     <script>
-      /* Busca e filtro por categoria (apenas visual, não interfere no script.js) */
+      /* Busca e filtro por categoria */
       (function () {
         var campo = document.getElementById("campoBusca");
         var botoes = document.querySelectorAll(".categoria");
