@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Dashboard</title>
+    <link rel="icon" href="../../../imagens/logos/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/painel.css" />
+    <link rel="stylesheet" href="../../../css/estabelecimento/dashboard.css" />
+  </head>
+  <body class="painel" data-area="estabelecimento">
+    <aside class="sidebar" id="sidebar">
+      <a href="../dashboard/index.html" class="sidebar__marca">
+        <img src="../../../imagens/logos/logo.png" alt="Logo Alimenta+" />
+        <span class="sidebar__nome" data-nome-estabelecimento>Alimenta+</span>
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li>
+            <a
+              href="../dashboard/index.html"
+              class="menu__link menu__link--ativo"
+              aria-current="page"
+            >
+              <i class="fa-solid fa-table-columns"></i>Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="../minhasOfertas/index.html" class="menu__link">
+              <i class="fa-solid fa-tag"></i>Minhas Ofertas
+            </a>
+          </li>
+          <li>
+            <a href="../reservas/index.html" class="menu__link">
+              <i class="fa-regular fa-calendar"></i>Reservas
+            </a>
+          </li>
+          <li>
+            <a href="../perfil/index.html" class="menu__link">
+              <i class="fa-regular fa-circle-user"></i>Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../index.html" class="menu__link menu__link--sair" data-sair>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>Sair
+      </a>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="conteudo">
+      <header class="cabecalho">
+        <div class="cabecalho__inicio">
+          <button
+            type="button"
+            class="botao-menu"
+            aria-label="Abrir menu"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="saudacao">
+            <p class="saudacao__nome" data-saudacao>Olá!</p>
+            <p class="saudacao__texto">Aqui está o resumo de hoje.</p>
+          </div>
+        </div>
+        <div class="data-atual">
+          <span data-data-atual></span>
+          <i class="fa-regular fa-calendar"></i>
+        </div>
+      </header>
+
+      <h1 class="sr-only">Dashboard</h1>
+
+      <section class="indicadores" id="indicadores" aria-label="Resumo do dia"></section>
+
+      <section class="dashboard-meio">
+        <article class="cartao impacto">
+          <h2 class="cartao__titulo">Impacto este mês</h2>
+          <div class="impacto__itens" id="impactoItens"></div>
+        </article>
+
+        <article class="cartao receita">
+          <h2 class="cartao__titulo">Receita recuperada</h2>
+          <img class="receita__icone" src="../../../imagens/icones/dashboard_sifrao.svg" alt="" />
+          <strong class="receita__valor" id="receitaValor">R$ 0,00</strong>
+          <p class="receita__comparacao" id="receitaComparacao">Sem comparação disponível.</p>
+        </article>
+      </section>
+
+      <section class="cartao metricas">
+        <div class="metricas__cabecalho">
+          <h2 class="cartao__titulo">Métricas mensais</h2>
+          <span id="periodoGrafico"></span>
+        </div>
+
+        <div class="metricas__grafico">
+          <svg
+            id="graficoMetricas"
+            role="img"
+            aria-label="Gráfico mensal de reservas e retiradas"
+          ></svg>
+        </div>
+
+        <div class="legenda">
+          <span><i class="legenda__linha legenda__linha--laranja"></i>Reservas</span>
+          <span><i class="legenda__linha legenda__linha--verde"></i>Retiradas</span>
+        </div>
+      </section>
+
+      <section class="cartao ultimas-reservas">
+        <div class="ultimas-reservas__cabecalho">
+          <h2 class="cartao__titulo">Últimas reservas</h2>
+          <a href="../reservas/index.html">Ver reservas</a>
+        </div>
+
+        <div class="ultimas-reservas__lista" id="ultimasReservas"></div>
+      </section>
+    </main>
+
+    <script type="module" src="../../../js/estabelecimento/dashboard.js"></script>
+  </body>
+</html>

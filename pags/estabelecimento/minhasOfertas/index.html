@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Minhas Ofertas</title>
+    <link rel="icon" href="../../../imagens/logos/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/painel.css" />
+    <link rel="stylesheet" href="../../../css/estabelecimento/minhasOfertas.css" />
+  </head>
+  <body class="painel" data-area="estabelecimento">
+    <aside class="sidebar" id="sidebar">
+      <a href="../dashboard/index.html" class="sidebar__marca">
+        <img src="../../../imagens/logos/logo.png" alt="Logo Alimenta+" />
+        <span class="sidebar__nome" data-nome-estabelecimento>Alimenta+</span>
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li>
+            <a href="../dashboard/index.html" class="menu__link">
+              <i class="fa-solid fa-table-columns"></i>Dashboard
+            </a>
+          </li>
+          <li>
+            <a
+              href="../minhasOfertas/index.html"
+              class="menu__link menu__link--ativo"
+              aria-current="page"
+            >
+              <i class="fa-solid fa-tag"></i>Minhas Ofertas
+            </a>
+          </li>
+          <li>
+            <a href="../reservas/index.html" class="menu__link">
+              <i class="fa-regular fa-calendar"></i>Reservas
+            </a>
+          </li>
+          <li>
+            <a href="../perfil/index.html" class="menu__link">
+              <i class="fa-regular fa-circle-user"></i>Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../index.html" class="menu__link menu__link--sair" data-sair>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>Sair
+      </a>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="conteudo">
+      <header class="cabecalho">
+        <div class="cabecalho__inicio">
+          <button
+            type="button"
+            class="botao-menu"
+            aria-label="Abrir menu"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="saudacao">
+            <p class="saudacao__nome" data-saudacao>Olá!</p>
+            <p class="saudacao__texto">
+              Aqui você pode criar uma nova oferta ou consultar suas ofertas anteriores.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <h1 class="sr-only">Minhas ofertas</h1>
+
+      <div class="ofertas-layout">
+        <section class="cartao nova-oferta" aria-labelledby="tituloNovaOferta">
+          <h2 id="tituloNovaOferta" class="cartao__titulo">Criar nova oferta</h2>
+
+          <form id="formOferta" class="nova-oferta__formulario" novalidate>
+            <div class="grupo-campo">
+              <label for="nomeOferta">Nome da oferta</label>
+              <input id="nomeOferta" class="campo" placeholder="Ex: Kit Padaria" required />
+            </div>
+
+            <div class="grupo-campo">
+              <label for="descricaoOferta">Descrição</label>
+              <textarea
+                id="descricaoOferta"
+                class="campo"
+                rows="3"
+                placeholder="Ex: 5 pães doces + 5 pães salgados"
+              ></textarea>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="precoOriginal">Preço original (R$)</label>
+              <input
+                id="precoOriginal"
+                class="campo"
+                type="number"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="Ex: 30,00"
+                required
+              />
+            </div>
+
+            <div class="grupo-campo">
+              <label for="precoOferta">Preço Alimenta+ (R$)</label>
+              <input
+                id="precoOferta"
+                class="campo"
+                type="number"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="Ex: 9,99"
+                required
+              />
+            </div>
+
+            <div class="grupo-campo">
+              <label for="estoqueOferta">Quantidade disponível</label>
+              <input
+                id="estoqueOferta"
+                class="campo"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="Ex: 5"
+                required
+              />
+            </div>
+
+            <div class="grupo-campo">
+              <label for="categoriaOferta">Categoria</label>
+              <select id="categoriaOferta" class="campo">
+                <option value="padaria">Padaria</option>
+                <option value="hortifruti">Hortifruti</option>
+                <option value="refeicoes">Refeições</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="horarioRetirada">Retirada até</label>
+              <div class="campo-horario">
+                <i class="fa-regular fa-clock"></i>
+                <input
+                  id="horarioRetirada"
+                  class="campo"
+                  list="sugestoesHorario"
+                  maxlength="5"
+                  inputmode="numeric"
+                  placeholder="Ex: 20:30"
+                  required
+                />
+              </div>
+              <datalist id="sugestoesHorario">
+                <option value="06:00"></option>
+                <option value="06:30"></option>
+                <option value="07:00"></option>
+                <option value="07:30"></option>
+                <option value="08:00"></option>
+                <option value="08:30"></option>
+                <option value="09:00"></option>
+                <option value="09:30"></option>
+                <option value="10:00"></option>
+                <option value="10:30"></option>
+                <option value="11:00"></option>
+                <option value="11:30"></option>
+                <option value="12:00"></option>
+                <option value="12:30"></option>
+                <option value="13:00"></option>
+                <option value="13:30"></option>
+                <option value="14:00"></option>
+                <option value="14:30"></option>
+                <option value="15:00"></option>
+                <option value="15:30"></option>
+                <option value="16:00"></option>
+                <option value="16:30"></option>
+                <option value="17:00"></option>
+                <option value="17:30"></option>
+                <option value="18:00"></option>
+                <option value="18:30"></option>
+                <option value="19:00"></option>
+                <option value="19:30"></option>
+                <option value="20:00"></option>
+                <option value="20:30"></option>
+                <option value="21:00"></option>
+                <option value="21:30"></option>
+                <option value="22:00"></option>
+              </datalist>
+              <small class="ajuda">Digite HH:MM ou use uma sugestão (0830 vira 08:30).</small>
+              <small class="erro-campo" id="erroHorario"></small>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="pesoOferta">Peso estimado por unidade (kg)</label>
+              <input
+                id="pesoOferta"
+                class="campo"
+                type="number"
+                min="0"
+                step="0.01"
+                value="0.30"
+                inputmode="decimal"
+              />
+              <small class="ajuda">Usado no Dashboard para estimar o desperdício evitado.</small>
+            </div>
+
+            <p class="mensagem" id="mensagemOferta" role="status" hidden></p>
+            <button type="submit" class="botao botao--laranja botao--largo">Publicar oferta</button>
+          </form>
+        </section>
+
+        <section class="cartao ultimas-ofertas" aria-labelledby="tituloUltimasOfertas">
+          <div class="ultimas-ofertas__cabecalho">
+            <h2 id="tituloUltimasOfertas" class="cartao__titulo">Últimas ofertas</h2>
+            <span id="totalOfertas"></span>
+          </div>
+
+          <table class="tabela-ofertas">
+            <thead>
+              <tr>
+                <th scope="col">Oferta</th>
+                <th scope="col">Qtd.</th>
+                <th scope="col">Data</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Status</th>
+                <th scope="col"><span class="sr-only">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody id="tabelaOfertas"></tbody>
+          </table>
+
+          <nav class="paginacao" id="paginacao" aria-label="Páginas de ofertas"></nav>
+        </section>
+      </div>
+    </main>
+
+    <div
+      class="modal"
+      id="modalEstoque"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tituloModalEstoque"
+    >
+      <div class="modal__caixa">
+        <button type="button" class="modal__fechar" data-fechar aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2 id="tituloModalEstoque" class="modal__titulo">Alterar estoque</h2>
+        <p class="modal__texto" id="nomeOfertaSelecionada"></p>
+
+        <div class="grupo-campo">
+          <label for="novoEstoque">Nova quantidade</label>
+          <input id="novoEstoque" class="campo" type="number" min="0" step="1" />
+        </div>
+
+        <p class="mensagem" id="mensagemEstoque" role="alert" hidden></p>
+
+        <div class="modal__acoes">
+          <button type="button" class="botao botao--claro" data-fechar>Cancelar</button>
+          <button type="button" class="botao botao--verde" id="salvarEstoque">Salvar</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../../../js/estabelecimento/minhasOfertas.js"></script>
+  </body>
+</html>

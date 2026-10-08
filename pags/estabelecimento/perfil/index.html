@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Perfil</title>
+    <link rel="icon" href="../../../imagens/logos/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/painel.css" />
+  </head>
+  <body class="painel" data-area="estabelecimento">
+    <aside class="sidebar" id="sidebar">
+      <a href="../dashboard/index.html" class="sidebar__marca">
+        <img src="../../../imagens/logos/logo.png" alt="Logo Alimenta+" />
+        <span class="sidebar__nome" data-nome-estabelecimento>Alimenta+</span>
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li>
+            <a href="../dashboard/index.html" class="menu__link">
+              <i class="fa-solid fa-table-columns"></i>Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="../minhasOfertas/index.html" class="menu__link">
+              <i class="fa-solid fa-tag"></i>Minhas Ofertas
+            </a>
+          </li>
+          <li>
+            <a href="../reservas/index.html" class="menu__link">
+              <i class="fa-regular fa-calendar"></i>Reservas
+            </a>
+          </li>
+          <li>
+            <a href="../perfil/index.html" class="menu__link menu__link--ativo" aria-current="page">
+              <i class="fa-regular fa-circle-user"></i>Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../index.html" class="menu__link menu__link--sair" data-sair>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>Sair
+      </a>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="conteudo">
+      <header class="cabecalho">
+        <div class="cabecalho__inicio">
+          <button
+            type="button"
+            class="botao-menu"
+            aria-label="Abrir menu"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="saudacao">
+            <p class="saudacao__nome" data-saudacao>Olá!</p>
+            <p class="saudacao__texto">Altere seu cadastro.</p>
+          </div>
+        </div>
+      </header>
+
+      <h1 class="titulo-pagina">Conta</h1>
+
+      <section class="quadro-dados" aria-label="Dados da conta">
+        <div class="item-dado">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/perfil.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Nome do responsável:</strong>
+            <span data-perfil="nome">…</span>
+          </div>
+        </div>
+
+        <div class="item-dado">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/documentov.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>CPF do responsável:</strong>
+            <span data-perfil="cpf">…</span>
+          </div>
+        </div>
+
+        <div class="item-dado">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/documentov.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>CNPJ do estabelecimento:</strong>
+            <span data-perfil="estabelecimento.cnpj">…</span>
+          </div>
+        </div>
+
+        <a class="item-dado" href="../alterarSenha/index.html">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/senha.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Senha:</strong>
+            <span>**********</span>
+          </div>
+          <img src="../../../imagens/icones/seta_direita.svg" alt="" class="item-dado__seta" />
+        </a>
+
+        <a class="item-dado" href="../alterarEmail/index.html">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/email.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Email:</strong>
+            <span data-perfil="email">…</span>
+          </div>
+          <img src="../../../imagens/icones/seta_direita.svg" alt="" class="item-dado__seta" />
+        </a>
+
+        <a class="item-dado" href="../alterarCelular/index.html">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/celular.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Celular:</strong>
+            <span data-perfil="celular">…</span>
+          </div>
+          <img src="../../../imagens/icones/seta_direita.svg" alt="" class="item-dado__seta" />
+        </a>
+
+        <a class="item-dado" href="../alterarNomeFantasia/index.html">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/comerciov.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Nome fantasia:</strong>
+            <span data-perfil="estabelecimento.nomeFantasia">…</span>
+          </div>
+          <img src="../../../imagens/icones/seta_direita.svg" alt="" class="item-dado__seta" />
+        </a>
+
+        <a class="item-dado" href="../alterarEndereco/index.html">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/localizacaov.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Endereço:</strong>
+            <span data-perfil="estabelecimento.endereco">…</span>
+          </div>
+          <img src="../../../imagens/icones/seta_direita.svg" alt="" class="item-dado__seta" />
+        </a>
+
+        <a class="item-dado" href="../alterarCategoria/index.html">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/categoriasv.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Categoria:</strong>
+            <span data-perfil="estabelecimento.categoria">…</span>
+          </div>
+          <img src="../../../imagens/icones/seta_direita.svg" alt="" class="item-dado__seta" />
+        </a>
+
+        <a class="item-dado" href="../excluirConta/index.html">
+          <div class="item-dado__icone">
+            <img src="../../../imagens/icones/lixeira.svg" alt="" />
+          </div>
+          <div class="item-dado__texto">
+            <strong>Excluir conta:</strong>
+          </div>
+          <img src="../../../imagens/icones/seta_direita.svg" alt="" class="item-dado__seta" />
+        </a>
+      </section>
+    </main>
+
+    <script type="module" src="../../../js/perfil.js"></script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+/* Estabelecimento - Minhas ofertas */
+
+.ofertas-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
+}
+
+.cartao__titulo {
+  margin-bottom: 20px;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+/* ---------- Criar nova oferta ---------- */
+
+.nova-oferta {
+  padding: 24px;
+}
+
+.nova-oferta__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nova-oferta .grupo-campo label {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.nova-oferta .campo {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.campo-horario {
+  position: relative;
+}
+
+.campo-horario i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.campo-horario .campo {
+  padding-left: 36px;
+  letter-spacing: 1px;
+}
+
+.nova-oferta .botao--largo {
+  width: auto;
+  align-self: center;
+  margin-top: 8px;
+  padding: 10px 36px;
+  border-radius: 18px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ---------- Últimas ofertas ---------- */
+
+.ultimas-ofertas {
+  padding: 24px;
+}
+
+.ultimas-ofertas__cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ultimas-ofertas__cabecalho span {
+  font-size: 0.8rem;
+}
+
+.tabela-ofertas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-ofertas th {
+  padding: 10px 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.tabela-ofertas td {
+  padding: 12px 8px;
+  font-size: 0.85rem;
+  color: var(--azul-marinho);
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+.tabela-ofertas__acoes {
+  width: 48px;
+}
+
+/* ---------- Paginação ---------- */
+
+.paginacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.paginacao:empty {
+  display: none;
+}
+
+.paginacao__botao {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  background-color: var(--branco);
+  border: 1px solid var(--verde-escuro);
+  border-radius: 8px;
+  color: var(--verde-escuro);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.paginacao__botao:hover {
+  background-color: var(--verde-claro);
+}
+
+.paginacao__reticencias {
+  align-self: center;
+  padding: 0 2px;
+}
+
+.paginacao__botao--ativo,
+.paginacao__botao--ativo:hover {
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+}
+
+/* ---------- Menu de ações ---------- */
+
+.acoes {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.acoes__botao {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--verde-escuro);
+}
+
+.acoes__botao:hover {
+  background-color: var(--verde-claro);
+}
+
+.acoes__menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 50;
+  width: 200px;
+  display: none;
+  padding: 7px;
+  background-color: var(--branco);
+  border: 1px solid var(--verde-escuro);
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+}
+
+.acoes__menu--aberto {
+  display: block;
+}
+
+.acoes__menu button {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--verde-escuro);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.acoes__menu button:hover {
+  background-color: var(--verde-claro);
+}
+
+.acoes__menu .acoes__excluir {
+  color: var(--erro);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1100px) {
+  .ofertas-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .tabela-ofertas thead {
+    display: none;
+  }
+
+  .tabela-ofertas tr {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--cinza-borda);
+  }
+
+  .tabela-ofertas td {
+    padding: 0;
+    border: none;
+  }
+
+  .tabela-ofertas td::before {
+    content: attr(data-rotulo);
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.75;
+  }
+
+  .tabela-ofertas td:first-child {
+    grid-column: 1 / -1;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .tabela-ofertas td:first-child::before {
+    display: none;
+  }
+
+  .tabela-ofertas__acoes {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+}

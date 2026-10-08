@@ -1,0 +1,73 @@
+/* Paleta oficial do protótipo (Figma) */
+:root {
+  --laranja: #f2522f;
+  --verde-floresta: #2f7634;
+  --verde-folha: #529457;
+  --verde-claro: #e7efe0;
+  --verde-escuro: #18341e;
+  --azul-marinho: #172b4d;
+  --creme: #fffbf3;
+  --branco: #ffffff;
+
+  --cinza-borda: #d9d9d9;
+  --cinza-placeholder: #b7b2a5;
+  --texto-suave: #57605b;
+  --erro: #c64b42;
+
+  --alerta-fundo: #f8f0d8;
+  --alerta-texto: #8a741f;
+  --erro-fundo: #f7e5e2;
+  --inativo-fundo: #ecebe7;
+  --inativo-texto: #77766f;
+  --desabilitado-fundo: #dddcd5;
+  --desabilitado-texto: #87867f;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--verde-escuro);
+  background-color: var(--creme);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Esconde visualmente, mas mantém para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

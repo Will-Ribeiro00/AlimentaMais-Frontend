@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Excluir conta</title>
+    <link rel="icon" href="../../../imagens/logos/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/painel.css" />
+  </head>
+  <body class="painel" data-area="consumidor">
+    <aside class="sidebar" id="sidebar">
+      <a href="../inicio/index.html" class="sidebar__marca">
+        <img src="../../../imagens/logos/logo.png" alt="Logo Alimenta+" />
+        <span class="sidebar__nome">Alimenta+</span>
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li>
+            <a href="../inicio/index.html" class="menu__link">
+              <i class="fa-solid fa-house"></i>Início
+            </a>
+          </li>
+          <li>
+            <a href="../minhasReservas/index.html" class="menu__link">
+              <i class="fa-regular fa-calendar"></i>Minhas Reservas
+            </a>
+          </li>
+          <li>
+            <a href="../perfil/index.html" class="menu__link menu__link--ativo" aria-current="page">
+              <i class="fa-regular fa-circle-user"></i>Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../index.html" class="menu__link menu__link--sair" data-sair>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>Sair
+      </a>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="conteudo">
+      <header class="cabecalho">
+        <div class="cabecalho__inicio">
+          <button
+            type="button"
+            class="botao-menu"
+            aria-label="Abrir menu"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a href="../perfil/index.html" class="botao-voltar" aria-label="Voltar para o perfil">
+            <img src="../../../imagens/icones/voltar.svg" alt="" />
+          </a>
+        </div>
+      </header>
+
+      <h1 class="titulo-pagina">Excluir conta</h1>
+
+      <form class="formulario" data-alterar="excluir">
+        <p class="texto-exclusao">
+          Você tem certeza que quer excluir sua conta?<br />
+          A exclusão de conta é <strong>permanente</strong> e não poderá ser refeita.
+        </p>
+
+        <label class="confirmacao">
+          <input type="checkbox" name="confirmar" required />
+          Sim, tenho certeza que quero excluir minha conta.
+        </label>
+
+        <p class="mensagem" role="status" hidden></p>
+        <button type="submit" class="botao botao--laranja botao--largo">Excluir minha conta</button>
+      </form>
+    </main>
+
+    <script type="module" src="../../../js/alterarDados.js"></script>
+  </body>
+</html>

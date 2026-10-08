@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Alterar email</title>
+    <link rel="icon" href="../../../imagens/logos/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/painel.css" />
+  </head>
+  <body class="painel" data-area="estabelecimento">
+    <aside class="sidebar" id="sidebar">
+      <a href="../dashboard/index.html" class="sidebar__marca">
+        <img src="../../../imagens/logos/logo.png" alt="Logo Alimenta+" />
+        <span class="sidebar__nome" data-nome-estabelecimento>Alimenta+</span>
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li>
+            <a href="../dashboard/index.html" class="menu__link">
+              <i class="fa-solid fa-table-columns"></i>Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="../minhasOfertas/index.html" class="menu__link">
+              <i class="fa-solid fa-tag"></i>Minhas Ofertas
+            </a>
+          </li>
+          <li>
+            <a href="../reservas/index.html" class="menu__link">
+              <i class="fa-regular fa-calendar"></i>Reservas
+            </a>
+          </li>
+          <li>
+            <a href="../perfil/index.html" class="menu__link menu__link--ativo" aria-current="page">
+              <i class="fa-regular fa-circle-user"></i>Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../index.html" class="menu__link menu__link--sair" data-sair>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>Sair
+      </a>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="conteudo">
+      <header class="cabecalho">
+        <div class="cabecalho__inicio">
+          <button
+            type="button"
+            class="botao-menu"
+            aria-label="Abrir menu"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a href="../perfil/index.html" class="botao-voltar" aria-label="Voltar para o perfil">
+            <img src="../../../imagens/icones/voltar.svg" alt="" />
+          </a>
+        </div>
+      </header>
+
+      <h1 class="titulo-pagina">Alterar email</h1>
+
+      <form class="formulario" data-alterar="email">
+        <input type="email" class="campo" aria-label="Email atual" data-valor-atual disabled />
+        <input
+          type="email"
+          name="email"
+          class="campo"
+          placeholder="Digite o novo email"
+          aria-label="Novo email"
+          autocomplete="email"
+          required
+        />
+
+        <p class="mensagem" role="status" hidden></p>
+        <button type="submit" class="botao botao--verde botao--largo">Salvar alterações</button>
+      </form>
+    </main>
+
+    <script type="module" src="../../../js/alterarDados.js"></script>
+  </body>
+</html>

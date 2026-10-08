@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Entrar</title>
+    <link rel="icon" href="../../imagens/logos/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/login.css" />
+  </head>
+  <body class="login">
+    <section class="login__apresentacao">
+      <a href="../../index.html">
+        <img
+          class="login__logo-completa"
+          src="../../imagens/logos/logo_completa.png"
+          alt="Alimenta+: reciclagem de alimentos, transformação de vidas."
+        />
+      </a>
+
+      <div class="slogan">
+        <h1>
+          <span>Transformando<br />desperdício</span><br />
+          <span class="slogan__destaque">em valor.</span>
+        </h1>
+        <p>
+          Conectamos excedentes de alimentos a novos destinos, gerando impacto positivo para todos
+        </p>
+      </div>
+
+      <ul class="vantagens">
+        <li class="vantagem">
+          <span class="vantagem__icone"><img src="../../imagens/icones/folha.svg" alt="" /></span>
+          <p>Menos desperdício<br />Mais aproveitamento</p>
+        </li>
+        <li class="vantagem">
+          <span class="vantagem__icone"><img src="../../imagens/icones/coracao.svg" alt="" /></span>
+          <p>Mais Economia<br />Para você</p>
+        </li>
+        <li class="vantagem">
+          <span class="vantagem__icone"><img src="../../imagens/icones/grafico.svg" alt="" /></span>
+          <p>Mais impacto<br />para o mundo</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="login__formularios">
+      <img class="login__logo" src="../../imagens/logos/logo.png" alt="Alimenta+" />
+      <p class="login__frase">reciclagem de alimentos,<br />transformação de vidas</p>
+
+      <div class="abas" role="tablist">
+        <button type="button" class="aba aba--ativa" id="tabEntrar" role="tab">Entrar</button>
+        <button type="button" class="aba" id="tabCriar" role="tab">Criar conta</button>
+      </div>
+
+      <form id="loginForm" class="formulario-login">
+        <label class="campo-icone">
+          <img src="../../imagens/icones/carta.svg" alt="" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Digite seu e-mail"
+            autocomplete="email"
+            required
+          />
+        </label>
+
+        <label class="campo-icone">
+          <img src="../../imagens/icones/cadeado.svg" alt="" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
+            required
+          />
+        </label>
+
+        <div class="formulario-login__opcoes">
+          <label class="lembrar">
+            <input type="checkbox" name="remember" />
+            Lembrar de mim
+          </label>
+          <a href="#" class="esqueci-senha">Esqueci minha senha</a>
+        </div>
+
+        <button type="submit" class="botao-login">Entrar</button>
+      </form>
+
+      <div id="painelCriarConta" hidden>
+        <div class="abas abas--tipo-conta" role="tablist">
+          <button type="button" class="aba aba--ativa" id="tabConsumidor" role="tab">
+            Consumidor
+          </button>
+          <button type="button" class="aba" id="tabEstabelecimento" role="tab">
+            Estabelecimento
+          </button>
+        </div>
+
+        <form id="formConsumidor" class="formulario-login">
+          <label class="campo-icone">
+            <img src="../../imagens/icones/perfil.svg" alt="" />
+            <input
+              type="text"
+              name="nome"
+              placeholder="Digite seu nome"
+              autocomplete="name"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/documento.svg" alt="" />
+            <input
+              type="text"
+              name="cpf"
+              placeholder="Digite seu CPF"
+              inputmode="numeric"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/carta.svg" alt="" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/cadeado.svg" alt="" />
+            <input
+              type="password"
+              name="senha"
+              placeholder="Digite sua senha"
+              autocomplete="new-password"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/cadeado.svg" alt="" />
+            <input
+              type="password"
+              name="confirmarSenha"
+              placeholder="Confirme sua senha"
+              autocomplete="new-password"
+              required
+            />
+          </label>
+
+          <button type="submit" class="botao-login">Cadastrar-se</button>
+        </form>
+
+        <form id="formEstabelecimento" class="formulario-login" hidden>
+          <label class="campo-icone">
+            <img src="../../imagens/icones/perfil.svg" alt="" />
+            <input
+              type="text"
+              name="nomeResponsavel"
+              placeholder="Digite o nome do responsável"
+              autocomplete="name"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/documento.svg" alt="" />
+            <input
+              type="text"
+              name="cpfResponsavel"
+              placeholder="Digite o CPF do responsável"
+              inputmode="numeric"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/documento.svg" alt="" />
+            <input
+              type="text"
+              name="cnpj"
+              placeholder="Digite o CNPJ do estabelecimento"
+              inputmode="numeric"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/comercio.svg" alt="" />
+            <input type="text" name="nomeFantasia" placeholder="Digite o Nome Fantasia" required />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/localizacao.svg" alt="" />
+            <input
+              type="text"
+              name="endereco"
+              placeholder="Digite o Endereço"
+              autocomplete="street-address"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/categorias.svg" alt="" />
+            <select name="categoria" required>
+              <option value="" disabled selected>Selecione a categoria</option>
+              <option value="restaurante">Restaurante</option>
+              <option value="mercado">Mercado</option>
+              <option value="padaria">Padaria</option>
+              <option value="outro">Outro</option>
+            </select>
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/carta.svg" alt="" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/cadeado.svg" alt="" />
+            <input
+              type="password"
+              name="senha"
+              placeholder="Digite sua senha"
+              autocomplete="new-password"
+              required
+            />
+          </label>
+
+          <label class="campo-icone">
+            <img src="../../imagens/icones/cadeado.svg" alt="" />
+            <input
+              type="password"
+              name="confirmarSenha"
+              placeholder="Confirme sua senha"
+              autocomplete="new-password"
+              required
+            />
+          </label>
+
+          <button type="submit" class="botao-login">Cadastrar-se</button>
+        </form>
+      </div>
+    </section>
+
+    <script type="module" src="../../js/login/script.js"></script>
+  </body>
+</html>

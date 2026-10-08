@@ -1,0 +1,80 @@
+.lista-reservas {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.reserva {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 130px;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 20px;
+}
+
+.reserva__dados {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 0.9fr 0.9fr 1fr;
+}
+
+.reserva__campo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.reserva__campo dt {
+  padding: 0 6px 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+.reserva__campo dd {
+  padding: 8px 6px 0;
+  font-size: 0.8rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.reserva__campo .status {
+  margin: 0 auto;
+}
+
+.reserva__cancelar {
+  border-radius: 12px;
+}
+
+.mais-reservas {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1100px) {
+  .reserva {
+    grid-template-columns: 1fr;
+  }
+
+  .reserva__cancelar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .reserva__dados {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .reserva__dados {
+    grid-template-columns: 1fr;
+  }
+}

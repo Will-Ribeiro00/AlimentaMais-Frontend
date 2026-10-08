@@ -1,0 +1,170 @@
+/* Estabelecimento - Reservas agrupadas por oferta */
+
+.grupos-reservas {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.grupo-reserva {
+  padding: 0 20px;
+}
+
+.grupo-reserva__cabecalho {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.grupo-reserva__titulo {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.grupo-reserva__info {
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.grupo-reserva__alternar {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: var(--verde-escuro);
+  font-size: 1.3rem;
+}
+
+.grupo-reserva__alternar[aria-expanded="true"] {
+  color: var(--laranja);
+}
+
+.grupo-reserva__conteudo {
+  padding-bottom: 20px;
+}
+
+/* ---------- Resumo da oferta ---------- */
+
+.resumo-oferta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) repeat(5, minmax(0, 1fr));
+  margin-bottom: 20px;
+}
+
+.resumo-oferta div {
+  min-width: 0;
+}
+
+.resumo-oferta dt {
+  padding: 0 8px 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+.resumo-oferta dd {
+  padding: 8px;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+/* ---------- Reservas dos clientes ---------- */
+
+.grupo-reserva__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 8px;
+}
+
+.reserva-cliente {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 140px;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 20px;
+  border: 1px solid var(--verde-escuro);
+  border-radius: 8px;
+}
+
+.reserva-cliente__dados {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.reserva-cliente__dados dt {
+  padding: 0 8px 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+.reserva-cliente__dados dd {
+  padding: 8px 8px 0;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.reserva-cliente__acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reserva-cliente__acoes .botao {
+  border-radius: 12px;
+}
+
+/* ---------- Ver mais ---------- */
+
+.mais-reservas {
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1100px) {
+  .resumo-oferta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .reserva-cliente {
+    grid-template-columns: 1fr;
+  }
+
+  .reserva-cliente__acoes {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 750px) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .grupo-reserva__titulo {
+    font-size: 1.3rem;
+  }
+
+  .resumo-oferta,
+  .reserva-cliente__dados {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .reserva-cliente__acoes {
+    flex-direction: column;
+  }
+}

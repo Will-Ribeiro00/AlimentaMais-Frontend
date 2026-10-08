@@ -1,0 +1,256 @@
+/* Login e cadastro */
+
+.login {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------- Painel esquerdo (apresentação) ---------- */
+
+.login__apresentacao {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 56px;
+  background-color: var(--verde-claro);
+}
+
+.login__logo-completa {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slogan h1 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--laranja);
+}
+
+.slogan__destaque {
+  color: var(--verde-folha);
+}
+
+.slogan p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.vantagens {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.vantagem {
+  width: 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.vantagem__icone {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--verde-folha);
+  border-radius: 50%;
+}
+
+.vantagem p {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* ---------- Painel direito (formulários) ---------- */
+
+.login__formularios {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 40px 72px;
+  overflow-y: auto;
+}
+
+.login__logo {
+  width: 130px;
+  margin: 0 auto;
+}
+
+.login__frase {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.abas {
+  width: 100%;
+  display: flex;
+}
+
+.abas--tipo-conta {
+  margin-bottom: 25px;
+}
+
+.aba {
+  flex: 1;
+  padding-bottom: 12px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid var(--cinza-borda);
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.55;
+}
+
+.aba--ativa {
+  color: var(--laranja);
+  border-bottom-color: var(--laranja);
+  opacity: 1;
+}
+
+.formulario-login {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo-icone {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  background-color: var(--branco);
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+}
+
+.campo-icone:focus-within {
+  border-color: var(--laranja);
+}
+
+.campo-icone img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+.campo-icone input,
+.campo-icone select {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.campo-icone input::placeholder,
+.campo-icone select:invalid {
+  color: var(--cinza-placeholder);
+}
+
+.formulario-login__opcoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lembrar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lembrar input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--laranja);
+  cursor: pointer;
+}
+
+.esqueci-senha {
+  color: var(--verde-folha);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.esqueci-senha:hover {
+  text-decoration: underline;
+}
+
+.botao-login {
+  height: 54px;
+  margin-top: 4px;
+  background-color: var(--verde-folha);
+  border: none;
+  border-radius: 18px;
+  color: var(--branco);
+  font-size: 19px;
+  font-weight: 600;
+  transition: background-color 0.15s;
+}
+
+.botao-login:hover {
+  background-color: var(--verde-floresta);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 900px) {
+  .login {
+    height: auto;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .login__apresentacao,
+  .login__formularios {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .login__apresentacao {
+    padding: 32px 24px;
+  }
+
+  .login__formularios {
+    padding: 32px 24px;
+  }
+
+  .slogan h1 {
+    font-size: 30px;
+  }
+
+  .vantagens {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}

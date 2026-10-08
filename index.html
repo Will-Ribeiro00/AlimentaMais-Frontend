@@ -1,22 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Alimenta+</title>
-
     <link rel="icon" href="imagens/logos/logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
     />
 
-    <link rel="stylesheet" href="css/global/style.css" />
-    <link rel="stylesheet" href="css/index/style.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <header class="nav">
@@ -24,7 +22,7 @@
         <img src="imagens/logos/logo_completa.png" alt="Alimenta+" />
       </a>
 
-      <nav class="nav__links">
+      <nav class="nav__links" aria-label="Seções da página">
         <a href="#inicio" class="nav__link">Início</a>
         <a href="#sobre" class="nav__link">O Alimenta+</a>
         <a href="#impacto" class="nav__link">Impacto</a>
@@ -32,20 +30,14 @@
       </nav>
 
       <div class="nav__acoes">
-        <button
-          type="button"
-          id="btnDirecionaLogin"
-          class="botao botao--contorno"
+        <a href="pags/login/index.html?modo=login" class="botao botao--contorno"
+          >Entrar</a
         >
-          Entrar
-        </button>
-        <button
-          type="button"
-          id="btnDirecionaCadastro"
+        <a
+          href="pags/login/index.html?modo=cadastro"
           class="botao botao--laranja"
+          >Cadastrar</a
         >
-          Cadastrar
-        </button>
       </div>
     </header>
 
@@ -63,10 +55,13 @@
           </p>
 
           <div class="hero__acoes">
-            <button type="button" class="botao botao--verde">
+            <a
+              href="pags/login/index.html?modo=login"
+              class="botao botao--verde"
+            >
               Encontrar alimentos
               <img src="imagens/icones/lupa.svg" alt="" />
-            </button>
+            </a>
 
             <a href="#sobre" class="link-texto">
               Saiba mais
@@ -77,7 +72,8 @@
 
         <div
           class="hero__imagem"
-          style="background-image: url(&quot;imagens/img/image.png&quot;)"
+          role="img"
+          aria-label="Alimentos frescos"
         ></div>
       </section>
 
@@ -98,16 +94,18 @@
             aproveitamento mais acessível, econômico e consciente.
           </p>
 
-          <button type="button" class="botao botao--laranja">Saiba mais</button>
+          <a href="#comoFunciona" class="botao botao--laranja">Saiba mais</a>
         </div>
 
         <div class="porque__cards">
           <article class="card-beneficio">
             <h3 class="card-beneficio__titulo">Economize</h3>
             <div class="card-beneficio__linha">
-              <div class="card-beneficio__icone">
-                <img src="imagens/icones/dinheiro.svg" alt="" />
-              </div>
+              <img
+                src="imagens/icones/dinheiro.svg"
+                alt=""
+                class="card-beneficio__icone"
+              />
               <p>Encontre alimentos de qualidade por preços acessíveis.</p>
             </div>
           </article>
@@ -115,9 +113,11 @@
           <article class="card-beneficio">
             <h3 class="card-beneficio__titulo">Evite desperdício</h3>
             <div class="card-beneficio__linha">
-              <div class="card-beneficio__icone">
-                <img src="imagens/icones/fruta.svg" alt="" />
-              </div>
+              <img
+                src="imagens/icones/fruta.svg"
+                alt=""
+                class="card-beneficio__icone"
+              />
               <p>
                 Dê uma nova oportunidade a alimentos que seriam descartados.
               </p>
@@ -127,9 +127,11 @@
           <article class="card-beneficio">
             <h3 class="card-beneficio__titulo">Divirta-se</h3>
             <div class="card-beneficio__linha">
-              <div class="card-beneficio__icone">
-                <img src="imagens/icones/controle.svg" alt="" />
-              </div>
+              <img
+                src="imagens/icones/controle.svg"
+                alt=""
+                class="card-beneficio__icone"
+              />
               <p>
                 Através de mini-games, acumule pontos, suba de nível e conquiste
                 recompensas.
@@ -140,9 +142,11 @@
           <article class="card-beneficio">
             <h3 class="card-beneficio__titulo">Veja seu impacto</h3>
             <div class="card-beneficio__linha">
-              <div class="card-beneficio__icone">
-                <img src="imagens/icones/arvore.svg" alt="" />
-              </div>
+              <img
+                src="imagens/icones/arvore.svg"
+                alt=""
+                class="card-beneficio__icone"
+              />
               <p>Acompanhe o quanto você ajudou a reaproveitar.</p>
             </div>
           </article>
@@ -155,31 +159,37 @@
         <div class="impacto__cards">
           <article class="card-metrica">
             <img src="imagens/icones/talher.svg" alt="" />
-
-            <div class="card-metrica__texto">
+            <div>
               <p class="card-metrica__rotulo">Alimentos salvos</p>
-              <p class="card-metrica__valor">8.400</p>
-              <p class="card-metrica__unidade">unidades</p>
+              <p class="card-metrica__valor" data-impacto="alimentosSalvos">
+                8.400
+              </p>
+              <p class="card-metrica__rotulo">unidades</p>
             </div>
           </article>
 
           <article class="card-metrica">
             <img src="imagens/icones/folha_2.svg" alt="" />
-
-            <div class="card-metrica__texto">
+            <div>
               <p class="card-metrica__rotulo">Alimentos reaproveitados</p>
-              <p class="card-metrica__valor">1.200</p>
-              <p class="card-metrica__unidade">kgs</p>
+              <p class="card-metrica__valor" data-impacto="kgReaproveitados">
+                1.200
+              </p>
+              <p class="card-metrica__rotulo">kgs</p>
             </div>
           </article>
 
           <article class="card-metrica">
             <img src="imagens/icones/sifrao.svg" alt="" />
-
-            <div class="card-metrica__texto">
+            <div>
               <p class="card-metrica__rotulo">Economia gerada</p>
-              <p class="card-metrica__valor">R$35.500</p>
-              <p class="card-metrica__unidade">para estabelecimentos</p>
+              <p
+                class="card-metrica__valor"
+                data-impacto="receitaEstabelecimentos"
+              >
+                R$35.500
+              </p>
+              <p class="card-metrica__rotulo">para estabelecimentos</p>
             </div>
           </article>
         </div>
@@ -188,10 +198,10 @@
       <section id="comoFunciona" class="como-funciona">
         <h2 class="titulo-secao">Como funciona?</h2>
 
-        <div class="como-funciona__passos">
-          <article class="passo">
+        <ol class="como-funciona__passos">
+          <li class="passo">
             <span class="passo__numero">1.</span>
-            <div class="passo__conteudo">
+            <div>
               <h3 class="passo__titulo">
                 Estabelecimentos cadastram seus excedentes
               </h3>
@@ -200,30 +210,30 @@
                 vendidos, mas ainda estão perfeitos para consumo.
               </p>
             </div>
-          </article>
+          </li>
 
-          <article class="passo">
+          <li class="passo">
             <span class="passo__numero">2.</span>
-            <div class="passo__conteudo">
+            <div>
               <h3 class="passo__titulo">Você procura e escolhe o que deseja</h3>
               <p>
-                Estabelecimentos disponibilizam alimentos que não foram
-                vendidos, mas ainda estão perfeitos para consumo.
+                Navegue pelas ofertas perto de você e reserve os alimentos que
+                quiser, por um preço menor.
               </p>
             </div>
-          </article>
+          </li>
 
-          <article class="passo">
+          <li class="passo">
             <span class="passo__numero">3.</span>
-            <div class="passo__conteudo">
+            <div>
               <h3 class="passo__titulo">Retire e gere impacto</h3>
               <p>
                 Retire seu pedido e acompanhe o impacto positivo que sua escolha
                 gera no mundo.
               </p>
             </div>
-          </article>
-        </div>
+          </li>
+        </ol>
       </section>
 
       <section class="cta">
@@ -231,51 +241,45 @@
         <p class="cta__texto">
           Inscreva-se em nosso site e venha salvar alimentos conosco!
         </p>
-        <button
-          type="button"
-          id="btnDirecionaCadastroCta"
-          class="botao botao--claro"
+        <a href="pags/login/index.html?modo=cadastro" class="botao botao--claro"
+          >Cadastrar</a
         >
-          Cadastrar
-        </button>
       </section>
     </main>
 
     <footer class="rodape">
       <div class="rodape__topo">
         <div class="rodape__marca">
-          <a href="/index.html">
+          <a href="#inicio">
             <img src="imagens/logos/logo_completa.png" alt="Alimenta+" />
           </a>
-          <p class="rodape__slogan">
-            Reciclagem de alimentos, transformação de vidas.
-          </p>
+          <p>Reciclagem de alimentos, transformação de vidas.</p>
         </div>
 
-        <div class="rodape__coluna">
-          <h4 class="rodape__titulo-coluna">Produto</h4>
+        <nav class="rodape__coluna" aria-label="Produto">
+          <h4 class="rodape__titulo">Produto</h4>
           <a href="#inicio" class="rodape__link">Início</a>
           <a href="#sobre" class="rodape__link">O Alimenta+</a>
           <a href="#impacto" class="rodape__link">Impacto</a>
           <a href="#comoFunciona" class="rodape__link">Como funciona</a>
-        </div>
+        </nav>
+
+        <nav class="rodape__coluna" aria-label="Empresa">
+          <h4 class="rodape__titulo">Empresa</h4>
+          <a href="#" class="rodape__link">Sobre nós</a>
+          <a href="#" class="rodape__link">Carreiras</a>
+          <a href="#" class="rodape__link">Contato</a>
+        </nav>
+
+        <nav class="rodape__coluna" aria-label="Suporte">
+          <h4 class="rodape__titulo">Suporte</h4>
+          <a href="#" class="rodape__link">Central de ajuda</a>
+          <a href="#" class="rodape__link">Termos de uso</a>
+          <a href="#" class="rodape__link">Privacidade</a>
+        </nav>
 
         <div class="rodape__coluna">
-          <h4 class="rodape__titulo-coluna">Empresa</h4>
-          <a href="/index.html" class="rodape__link">Sobre nós</a>
-          <a href="/index.html" class="rodape__link">Carreiras</a>
-          <a href="/index.html" class="rodape__link">Contato</a>
-        </div>
-
-        <div class="rodape__coluna">
-          <h4 class="rodape__titulo-coluna">Suporte</h4>
-          <a href="/index.html" class="rodape__link">Central de ajuda</a>
-          <a href="/index.html" class="rodape__link">Termos de uso</a>
-          <a href="/index.html" class="rodape__link">Privacidade</a>
-        </div>
-
-        <div class="rodape__coluna">
-          <h4 class="rodape__titulo-coluna">Siga-nos</h4>
+          <h4 class="rodape__titulo">Siga-nos</h4>
           <div class="rodape__redes">
             <a href="#" class="rodape__rede" aria-label="Instagram">
               <img src="imagens/icones/instagram.svg" alt="" />
@@ -290,11 +294,11 @@
         </div>
       </div>
 
-      <div class="rodape__base">
-        <p>&copy; 2026 Alimenta+. Todos os direitos reservados.</p>
-      </div>
+      <p class="rodape__base">
+        &copy; 2026 Alimenta+. Todos os direitos reservados.
+      </p>
     </footer>
 
-    <script type="module" src="js/index/script.js"></script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

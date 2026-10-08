@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimenta+ | Início</title>
+    <link rel="icon" href="../../../imagens/logos/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/painel.css" />
+    <link rel="stylesheet" href="../../../css/consumidor/inicio.css" />
+  </head>
+  <body class="painel" data-area="consumidor">
+    <aside class="sidebar" id="sidebar">
+      <a href="../inicio/index.html" class="sidebar__marca">
+        <img src="../../../imagens/logos/logo.png" alt="Logo Alimenta+" />
+        <span class="sidebar__nome">Alimenta+</span>
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li>
+            <a href="../inicio/index.html" class="menu__link menu__link--ativo" aria-current="page">
+              <i class="fa-solid fa-house"></i>Início
+            </a>
+          </li>
+          <li>
+            <a href="../minhasReservas/index.html" class="menu__link">
+              <i class="fa-regular fa-calendar"></i>Minhas Reservas
+            </a>
+          </li>
+          <li>
+            <a href="../perfil/index.html" class="menu__link">
+              <i class="fa-regular fa-circle-user"></i>Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../index.html" class="menu__link menu__link--sair" data-sair>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>Sair
+      </a>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="conteudo">
+      <header class="cabecalho">
+        <div class="cabecalho__inicio">
+          <button
+            type="button"
+            class="botao-menu"
+            aria-label="Abrir menu"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="saudacao">
+            <p class="saudacao__nome" data-saudacao>Olá!</p>
+            <p class="saudacao__texto">O que gostaria de comer hoje?</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="busca">
+        <input
+          type="search"
+          id="campoBusca"
+          class="busca__campo"
+          placeholder="Buscar alimentos, lojas..."
+          aria-label="Buscar alimentos e lojas"
+        />
+        <i class="fa-solid fa-magnifying-glass busca__icone"></i>
+      </div>
+
+      <div class="categorias" role="group" aria-label="Categorias">
+        <button
+          type="button"
+          class="categoria categoria--ativa"
+          data-categoria="todos"
+          aria-pressed="true"
+        >
+          <span class="categoria__icone">
+            <img
+              class="icone-categoria icone-categoria--todos"
+              src="../../../imagens/icones/categoria_todos_verde.svg"
+              alt=""
+            />
+            <img
+              class="icone-categoria icone-categoria--todos icone-categoria--ativo"
+              src="../../../imagens/icones/categoria_todos_laranja.svg"
+              alt=""
+            />
+          </span>
+          Todos
+        </button>
+        <button type="button" class="categoria" data-categoria="padaria" aria-pressed="false">
+          <span class="categoria__icone">
+            <img
+              class="icone-categoria icone-categoria--padaria"
+              src="../../../imagens/icones/categoria_padaria_verde.svg"
+              alt=""
+            />
+            <img
+              class="icone-categoria icone-categoria--padaria icone-categoria--ativo"
+              src="../../../imagens/icones/categoria_padaria_laranja.svg"
+              alt=""
+            />
+          </span>
+          Padaria
+        </button>
+        <button type="button" class="categoria" data-categoria="hortifruti" aria-pressed="false">
+          <span class="categoria__icone">
+            <img
+              class="icone-categoria icone-categoria--hortifruti"
+              src="../../../imagens/icones/categoria_hortifruti_verde.svg"
+              alt=""
+            />
+            <img
+              class="icone-categoria icone-categoria--hortifruti icone-categoria--ativo"
+              src="../../../imagens/icones/categoria_hortifruti_laranja.svg"
+              alt=""
+            />
+          </span>
+          Hortifruti
+        </button>
+        <button type="button" class="categoria" data-categoria="refeicoes" aria-pressed="false">
+          <span class="categoria__icone">
+            <img
+              class="icone-categoria icone-categoria--refeicoes"
+              src="../../../imagens/icones/categoria_refeicao_verde.svg"
+              alt=""
+            />
+            <img
+              class="icone-categoria icone-categoria--refeicoes icone-categoria--ativo"
+              src="../../../imagens/icones/categoria_refeicao_laranja.svg"
+              alt=""
+            />
+          </span>
+          Refeições
+        </button>
+        <button type="button" class="categoria" data-categoria="bebidas" aria-pressed="false">
+          <span class="categoria__icone">
+            <img
+              class="icone-categoria icone-categoria--bebidas"
+              src="../../../imagens/icones/categoria_bebida_verde.svg"
+              alt=""
+            />
+            <img
+              class="icone-categoria icone-categoria--bebidas icone-categoria--ativo"
+              src="../../../imagens/icones/categoria_bebida_laranja.svg"
+              alt=""
+            />
+          </span>
+          Bebidas
+        </button>
+      </div>
+
+      <section aria-labelledby="tituloOfertas">
+        <h1 id="tituloOfertas" class="titulo-pagina">Ofertas perto de você</h1>
+
+        <div class="lista-ofertas" id="listaOfertas" aria-live="polite">
+          <p class="vazio">Carregando ofertas...</p>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="modal"
+      id="modalOferta"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ofertaTitulo"
+    >
+      <div class="modal__caixa modal__caixa--destaque">
+        <button type="button" class="modal__fechar" data-fechar aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="detalhe-oferta__icone">
+          <img
+            id="ofertaIcone"
+            class="icone-categoria"
+            src="../../../imagens/icones/categoria_todos_verde.svg"
+            alt=""
+          />
+        </div>
+
+        <dl class="detalhes">
+          <div>
+            <dt>Produto:</dt>
+            <dd id="ofertaTitulo"></dd>
+          </div>
+          <div>
+            <dt>Descrição:</dt>
+            <dd id="ofertaDescricao"></dd>
+          </div>
+          <div>
+            <dt>Preço Original:</dt>
+            <dd id="ofertaOriginal"></dd>
+          </div>
+          <div>
+            <dt>Preço Alimenta+:</dt>
+            <dd id="ofertaPreco"></dd>
+          </div>
+          <div>
+            <dt>Desconto:</dt>
+            <dd id="ofertaDesconto"></dd>
+          </div>
+          <div>
+            <dt>Estabelecimento:</dt>
+            <dd id="ofertaEstabelecimento"></dd>
+          </div>
+          <div>
+            <dt>Endereço:</dt>
+            <dd id="ofertaEndereco"></dd>
+          </div>
+          <div>
+            <dt>Retirada:</dt>
+            <dd id="ofertaRetirada"></dd>
+          </div>
+        </dl>
+
+        <p class="detalhe-oferta__estoque" id="ofertaEstoque"></p>
+        <p class="mensagem" id="mensagemReserva" role="alert" hidden></p>
+        <button
+          type="button"
+          class="botao botao--laranja detalhe-oferta__reservar"
+          id="btnConfirmarReserva"
+        >
+          Reservar
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="modalConfirmada"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="confTitulo"
+    >
+      <div class="modal__caixa modal__caixa--destaque">
+        <button type="button" class="modal__fechar" data-fechar aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2 id="confTitulo" class="reserva-confirmada__titulo">Reserva confirmada!</h2>
+        <p class="reserva-confirmada__texto">Sua reserva foi confirmada com sucesso.</p>
+        <p class="reserva-confirmada__codigo">
+          O código da sua reserva é <strong id="confCodigo"></strong>
+        </p>
+
+        <dl class="detalhes">
+          <div>
+            <dt>Estabelecimento:</dt>
+            <dd id="confEstabelecimento"></dd>
+          </div>
+          <div>
+            <dt>Endereço:</dt>
+            <dd id="confEndereco"></dd>
+          </div>
+          <div>
+            <dt>Retirada:</dt>
+            <dd id="confRetirada"></dd>
+          </div>
+        </dl>
+
+        <a href="../minhasReservas/index.html" class="reserva-confirmada__link"
+          >Ver minhas reservas</a
+        >
+      </div>
+    </div>
+
+    <script type="module" src="../../../js/consumidor/inicio.js"></script>
+  </body>
+</html>
