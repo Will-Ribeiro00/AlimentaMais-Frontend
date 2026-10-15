@@ -24,9 +24,10 @@ export const perfil = autorizado ? chamarApi("/api/perfil") : new Promise(() => 
 perfil
   .then((usuario) => {
     const nome = usuario.estabelecimento?.nomeFantasia ?? usuario.nome;
+    const primeiroNome = nome.split(" ")[0];
     document
       .querySelectorAll("[data-saudacao]")
-      .forEach((el) => (el.textContent = `Olá, ${nome}!`));
+      .forEach((el) => (el.textContent = `Olá, ${primeiroNome}!`));
     document
       .querySelectorAll("[data-nome-estabelecimento]")
       .forEach((el) => (el.textContent = nome));
